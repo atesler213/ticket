@@ -2,7 +2,7 @@
 // In the future, this will use Axios or fetch to call ASP.NET Core endpoints.
 // Currently, it loads from mock JSON data to satisfy the UI completely decoupled from data source.
 
-const USE_MOCK = true; // Toggle to switch to ASP.NET API
+const USE_MOCK = false; // Set to false to use Vercel API
 const API_BASE = '/api';
 
 export const apiClient = {

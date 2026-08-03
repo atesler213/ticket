@@ -9,22 +9,10 @@ export interface LoginResult {
 }
 
 export const AuthService = {
-  async login(email: string, _password: string):Promise<LoginResult> {
-    // We fetch all users from mock and find the matching email
-    const users = await apiClient.get<User[]>('/users');
-    const user = users.find(u => u.email === email);
-    
-    if (!user) {
-      throw new Error("Invalid credentials");
-    }
-    
-    // In real app, apiClient.post('/auth/login', { email, password }) returns JWT.
-    return {
-      token: "mock.jwt.token.12345",
-      user,
-      mfaRequired: user.role !== 'Employee',
-      mfaChallengeId: user.role !== 'Employee' ? `mfa-${Date.now()}` : undefined
-    };
+  async login(email: string, password: string):Promise<LoginResult> {
+    // Send POST to Vercel Serverless Function
+    const response = await apiClient.post<LoginResult>('/auth/login', { email, password });
+    return response;
   },
 
   async verifyMfa(_challengeId: string, otpCode: string): Promise<{ verified: boolean }> {

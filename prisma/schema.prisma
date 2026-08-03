@@ -1,0 +1,161 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Company {
+  id             String       @id @default(uuid())
+  name           String
+  logo           String?
+  favicon        String?
+  primaryColor   String       @default("#3B82F6")
+  secondaryColor String       @default("#1E293B")
+  accentColor    String       @default("#F59E0B")
+  sidebarColor   String       @default("#0F172A")
+  theme          String       @default("dark")
+  language       String       @default("en")
+  timezone       String       @default("UTC")
+  supportEmail   String
+  supportPhone   String
+  subdomain      String       @unique
+  customDomain   String?
+  createdAt      DateTime     @default(now())
+
+  users          User[]
+  departments    Department[]
+  categories     Category[]
+  assets         Asset[]
+  tickets        Ticket[]
+}
+
+model User {
+  id             String       @id @default(uuid())
+  companyId      String
+  company        Company      @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  departmentId   String?
+  department     Department?  @relation(fields: [departmentId], references: [id], onDelete: SetNull)
+  name           String
+  email          String       @unique
+  passwordHash   String
+  role           String       @default("Employee")
+  avatar         String?
+  isActive       Boolean      @default(true)
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+
+  ticketsRequested Ticket[]   @relation("Requester")
+  ticketsAssigned  Ticket[]   @relation("Agent")
+  assetsAssigned   Asset[]    @relation("AssignedTo")
+  ticketEvents     TicketEvent[]
+}
+
+model Department {
+  id          String    @id @default(uuid())
+  companyId   String
+  company     Company   @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  name        String
+  description String?
+  managerId   String?
+  createdAt   DateTime  @default(now())
+
+  users       User[]
+  tickets     Ticket[]
+  categories  Category[]
+}
+
+model Category {
+  id                  String      @id @default(uuid())
+  companyId           String
+  company             Company     @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  name                String
+  description         String?
+  defaultDepartmentId String?
+  defaultDepartment   Department? @relation(fields: [defaultDepartmentId], references: [id], onDelete: SetNull)
+  defaultPriority     String      @default("Medium")
+
+  tickets             Ticket[]
+}
+
+model Asset {
+  id                String    @id @default(uuid())
+  companyId         String
+  company           Company   @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  name              String
+  assetTag          String    @unique
+  type              String    @default("Laptop")
+  status            String    @default("In Use")
+  assignedToId      String?
+  assignedTo        User?     @relation("AssignedTo", fields: [assignedToId], references: [id], onDelete: SetNull)
+  department        String?
+  serialNumber      String?
+  purchaseDate      DateTime?
+  warrantyExpiry    DateTime?
+  ownerEmail        String?
+  classification    String?
+  confidentiality   String?
+  integrity         String?
+  availability      String?
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+
+  tickets           Ticket[]
+}
+
+model Ticket {
+  id                  String      @id @default(uuid())
+  ticketType          String      @default("Incident")
+  companyId           String
+  company             Company     @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  requesterId         String
+  requester           User        @relation("Requester", fields: [requesterId], references: [id], onDelete: Restrict)
+  agentId             String?
+  agent               User?       @relation("Agent", fields: [agentId], references: [id], onDelete: SetNull)
+  departmentId        String?
+  department          Department? @relation(fields: [departmentId], references: [id], onDelete: SetNull)
+  categoryId          String
+  category            Category    @relation(fields: [categoryId], references: [id], onDelete: Restrict)
+  assetId             String?
+  asset               Asset?      @relation(fields: [assetId], references: [id], onDelete: SetNull)
+  
+  title               String
+  description         String
+  priority            String      @default("Medium")
+  status              String      @default("Open")
+  dataClassification  String?
+  isSensitiveQueue    Boolean     @default(false)
+
+  // SLA
+  slaDueDate          DateTime?
+  slaIsBreached       Boolean     @default(false)
+
+  // JSON fields for complex objects (incidentDetails, riskDetails, changeDetails, serviceHrDetails, capa)
+  incidentDetails     Json?
+  riskDetails         Json?
+  changeDetails       Json?
+  serviceHrDetails    Json?
+  capa                Json?
+
+  createdAt           DateTime    @default(now())
+  updatedAt           DateTime    @updatedAt
+
+  events              TicketEvent[]
+}
+
+model TicketEvent {
+  id          String   @id @default(uuid())
+  ticketId    String
+  ticket      Ticket   @relation(fields: [ticketId], references: [id], onDelete: Cascade)
+  type        String   @default("Comment")
+  actorId     String
+  actor       User     @relation(fields: [actorId], references: [id], onDelete: Restrict)
+  content     String
+  isInternal  Boolean  @default(false)
+  createdAt   DateTime @default(now())
+}
