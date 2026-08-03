@@ -26,6 +26,13 @@ function mapRoleToRouteGroups(role?: string): string[] {
   return []
 }
 
+export function getDashboardRouteName(role?: string): string {
+  const groups = mapRoleToRouteGroups(role)
+  if (groups.includes('Admin')) return 'admin.dashboard'
+  if (groups.includes('Agent')) return 'agent.dashboard'
+  return 'employee.dashboard'
+}
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -198,9 +205,12 @@ router.beforeEach(async (to, _from, next) => {
   if (to.meta.requiresAuth && !authStore.isAuthenticated) {
     next({ name: 'login' })
   } else if (requiredRoles.length > 0 && !requiredRoles.some(role => userRoleGroups.includes(role))) {
-    next({ name: 'dashboard' })
+    next({ name: getDashboardRouteName(authStore.user?.role) })
   } else if (to.name === 'login' && authStore.isAuthenticated) {
-    next({ name: 'dashboard' })
+    next({ name: getDashboardRouteName(authStore.user?.role) })
+  } else if (to.name === 'dashboard') {
+    // Explicitly redirect the raw /dashboard to the specific role route
+    next({ name: getDashboardRouteName(authStore.user?.role) })
   } else {
     next()
   }
