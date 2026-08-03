@@ -1,0 +1,38 @@
+[
+  {
+    "id": "int-1",
+    "name": "Entra ID",
+    "type": "SSO",
+    "status": "Connected",
+    "endpoint": "https://login.microsoftonline.com/{tenant-id}/v2.0/.well-known/openid-configuration",
+    "lastSyncAt": "2026-08-03T10:40:00Z",
+    "notes": "OIDC + conditional access"
+  },
+  {
+    "id": "int-2",
+    "name": "GLPI CMDB",
+    "type": "ITAM",
+    "status": "Connected",
+    "endpoint": "https://cmdb.company.de/apirest.php",
+    "lastSyncAt": "2026-08-03T10:38:00Z",
+    "notes": "Asset owner and CIA scores synced"
+  },
+  {
+    "id": "int-3",
+    "name": "Microsoft Sentinel",
+    "type": "SIEM",
+    "status": "Degraded",
+    "endpoint": "https://api.loganalytics.io/v1/workspaces/{workspace-id}/query",
+    "lastSyncAt": "2026-08-03T10:20:00Z",
+    "notes": "Lag detected in ingestion pipeline"
+  },
+  {
+    "id": "int-4",
+    "name": "NTP Pool",
+    "type": "NTP",
+    "status": "Connected",
+    "endpoint": "ntp://de.pool.ntp.org",
+    "lastSyncAt": "2026-08-03T10:45:00Z",
+    "notes": "Clock drift < 5 ms"
+  }
+]

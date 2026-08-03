@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reports & Analytics — TechCorp IT Support Portal</title>
+  <meta name="description" content="View IT Support reports and analytics.">
+  <link rel="stylesheet" href="design-system.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','sans-serif']}}}}</script>
+  <style>body{font-family:'Inter',sans-serif;}</style>
+</head>
+<body class="bg-[#F8FAFC]">
+  <div class="layout">
+    <!-- SIDEBAR (Agent) -->
+    <aside class="sidebar">
+      <div class="sidebar-logo"><div class="sidebar-logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="7.5 4.21 12 6.81 16.5 4.21"/><line x1="12" y1="22.08" x2="12" y2="11.73"/></svg></div><div class="sidebar-logo-text"><span class="sidebar-logo-title">TechCorp</span><span class="sidebar-logo-subtitle">IT Support Portal</span></div></div>
+      <nav class="sidebar-nav">
+        <div class="sidebar-group">
+          <div class="sidebar-group-label">MAIN</div>
+          <a href="agent-dashboard.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Dashboard</a>
+          <a href="agent-all-tickets.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>All Tickets<span class="sidebar-item-badge">324</span></a>
+          <a href="agent-my-queue.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>My Queue<span class="sidebar-item-badge">5</span></a>
+          <a href="agent-unassigned.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/></svg>Unassigned<span class="sidebar-item-badge">7</span></a>
+          <a href="#" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Overdue<span class="sidebar-item-badge">3</span></a>
+        </div>
+        <div class="sidebar-group"><div class="sidebar-group-label">MANAGEMENT</div>
+          <a href="agent-users.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Users</a>
+          <a href="agent-assets.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/></svg>Assets</a>
+          <a href="agent-departments.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Departments</a>
+          <a href="agent-knowledgebase.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>Knowledgebase</a>
+        </div>
+        <div class="sidebar-group"><div class="sidebar-group-label">REPORTS</div>
+          <a href="agent-reports.html" class="sidebar-item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>Reports</a>
+        </div>
+      </nav>
+      <div class="sidebar-footer"><div class="sidebar-user"><img src="https://ui-avatars.com/api/?name=Michael+Smith&background=10B981&color=fff&size=36&rounded=true&bold=true" alt="MS" class="sidebar-user-avatar"><div class="sidebar-user-info"><div class="sidebar-user-name">Michael Smith</div><div class="sidebar-user-role">IT Support Agent</div><div class="sidebar-user-status">Online</div></div></div></div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="topbar-left"><div class="topbar-title">Reports & Analytics</div></div>
+        <div class="topbar-right">
+          <button class="btn btn-secondary btn-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Export</button>
+          <div class="topbar-divider"></div>
+          <div class="topbar-profile"><img src="https://ui-avatars.com/api/?name=Michael+Smith&background=10B981&color=fff&size=36&rounded=true&bold=true" alt="MS" class="topbar-profile-avatar"><div class="topbar-profile-info"><div class="topbar-profile-name">Michael Smith</div><div class="topbar-profile-role">IT Support Agent</div></div></div>
+        </div>
+      </header>
+
+      <div class="content">
+        <!-- Date Range Filter -->
+        <div class="flex justify-between items-center mb-6 animate-slide-up">
+          <div class="flex bg-white rounded-lg border border-gray-200 p-1">
+            <button class="px-4 py-1.5 text-sm font-medium rounded-md text-gray-500 hover:text-gray-900">7 Days</button>
+            <button class="px-4 py-1.5 text-sm font-medium rounded-md bg-gray-100 text-gray-900 shadow-sm">30 Days</button>
+            <button class="px-4 py-1.5 text-sm font-medium rounded-md text-gray-500 hover:text-gray-900">3 Months</button>
+            <button class="px-4 py-1.5 text-sm font-medium rounded-md text-gray-500 hover:text-gray-900">12 Months</button>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-sm text-gray-500">Custom Range:</span>
+            <input type="date" class="form-input" style="height:36px;width:140px;">
+            <span class="text-gray-400">-</span>
+            <input type="date" class="form-input" style="height:36px;width:140px;">
+          </div>
+        </div>
+
+        <!-- Metric Summary -->
+        <div class="grid grid-cols-4 gap-6 mb-6 stagger">
+          <div class="card card-no-hover animate-slide-up" style="padding:20px;">
+            <div class="text-sm font-medium text-gray-500 mb-1">Tickets Created</div>
+            <div class="text-2xl font-bold text-gray-900 mb-2">1,248</div>
+            <div class="flex items-center gap-1 text-sm text-green-600"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg> 12% vs last 30 days</div>
+          </div>
+          <div class="card card-no-hover animate-slide-up" style="padding:20px;">
+            <div class="text-sm font-medium text-gray-500 mb-1">Tickets Resolved</div>
+            <div class="text-2xl font-bold text-gray-900 mb-2">1,156</div>
+            <div class="flex items-center gap-1 text-sm text-green-600"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg> 8% vs last 30 days</div>
+          </div>
+          <div class="card card-no-hover animate-slide-up" style="padding:20px;">
+            <div class="text-sm font-medium text-gray-500 mb-1">Avg Resolution Time</div>
+            <div class="text-2xl font-bold text-gray-900 mb-2">4h 12m</div>
+            <div class="flex items-center gap-1 text-sm text-green-600"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/></svg> 1h 30m vs last 30 days</div>
+          </div>
+          <div class="card card-no-hover animate-slide-up" style="padding:20px;">
+            <div class="text-sm font-medium text-gray-500 mb-1">SLA Compliance</div>
+            <div class="text-2xl font-bold text-gray-900 mb-2">94.2%</div>
+            <div class="flex items-center gap-1 text-sm text-red-500"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/></svg> -1.5% vs last 30 days</div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-6">
+          <!-- Mock Chart 1 -->
+          <div class="card card-no-hover animate-slide-up" style="height:350px;">
+            <div class="card-header" style="padding:20px;">
+              <h3 class="text-[15px] font-semibold text-gray-900">Tickets Volume</h3>
+            </div>
+            <div class="card-body" style="padding:20px;display:flex;align-items:center;justify-content:center;background:#F8FAFC;margin:0 20px 20px;border-radius:8px;border:1px dashed #E2E8F0;">
+              <div class="text-gray-400 flex flex-col items-center">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mb-2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                <span>[Line Chart Placeholder]</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mock Chart 2 -->
+          <div class="card card-no-hover animate-slide-up" style="height:350px;">
+            <div class="card-header" style="padding:20px;">
+              <h3 class="text-[15px] font-semibold text-gray-900">Tickets by Category</h3>
+            </div>
+            <div class="card-body" style="padding:20px;display:flex;align-items:center;justify-content:center;background:#F8FAFC;margin:0 20px 20px;border-radius:8px;border:1px dashed #E2E8F0;">
+              <div class="text-gray-400 flex flex-col items-center">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mb-2"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
+                <span>[Pie Chart Placeholder]</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+</body>
+</html>

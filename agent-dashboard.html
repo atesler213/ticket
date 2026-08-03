@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT Support Dashboard — TechCorp IT Support Portal</title>
+  <meta name="description" content="IT Support Agent dashboard with ticket overview, KPIs, and activity feed.">
+  <link rel="stylesheet" href="design-system.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','sans-serif']}}}}</script>
+  <style>body{font-family:'Inter',sans-serif;}</style>
+</head>
+<body class="bg-[#F8FAFC]">
+  <div class="layout">
+    <!-- SIDEBAR (Support Agent) -->
+    <aside class="sidebar">
+      <div class="sidebar-logo"><div class="sidebar-logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="7.5 4.21 12 6.81 16.5 4.21"/><line x1="12" y1="22.08" x2="12" y2="11.73"/></svg></div><div class="sidebar-logo-text"><span class="sidebar-logo-title">TechCorp</span><span class="sidebar-logo-subtitle">IT Support Portal</span></div></div>
+      <nav class="sidebar-nav">
+        <div class="sidebar-group">
+          <div class="sidebar-group-label">MAIN</div>
+          <a href="agent-dashboard.html" class="sidebar-item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Dashboard</a>
+          <a href="agent-all-tickets.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>All Tickets<span class="sidebar-item-badge">12</span></a>
+          <a href="agent-my-queue.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>My Queue<span class="sidebar-item-badge">5</span></a>
+          <a href="agent-unassigned.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>Unassigned<span class="sidebar-item-badge">7</span></a>
+          <a href="#" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Overdue<span class="sidebar-item-badge">3</span></a>
+        </div>
+        <div class="sidebar-group">
+          <div class="sidebar-group-label">MANAGEMENT</div>
+          <a href="agent-users.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Users</a>
+          <a href="agent-assets.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>Assets</a>
+          <a href="agent-departments.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Departments</a>
+          <a href="agent-knowledgebase.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>Knowledgebase</a>
+        </div>
+        <div class="sidebar-group">
+          <div class="sidebar-group-label">REPORTS</div>
+          <a href="agent-reports.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>Reports</a>
+          <a href="#" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>Analytics</a>
+        </div>
+        <div class="sidebar-group">
+          <div class="sidebar-group-label">ADMIN</div>
+          <a href="#" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4"/></svg>System Settings</a>
+          <a href="#" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>Audit Logs</a>
+        </div>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="sidebar-user">
+          <img src="https://ui-avatars.com/api/?name=Michael+Smith&background=10B981&color=fff&size=36&rounded=true&bold=true" alt="MS" class="sidebar-user-avatar">
+          <div class="sidebar-user-info">
+            <div class="sidebar-user-name">Michael Smith</div>
+            <div class="sidebar-user-role">IT Support Agent</div>
+            <div class="sidebar-user-status">Online</div>
+          </div>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <button class="sidebar-collapse-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+          Collapse
+        </button>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="topbar-hamburger" style="display:flex;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+          <div class="topbar-title">IT Support Dashboard</div>
+        </div>
+        <div class="topbar-center"><div class="topbar-search"><svg class="topbar-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input type="text" placeholder="Search tickets, users, assets..."><span class="topbar-search-shortcut">⌘ K</span></div></div>
+        <div class="topbar-right">
+          <button class="topbar-icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><span class="badge" style="background:var(--primary-600);">5</span></button>
+          <button class="topbar-icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></button>
+          <div class="topbar-divider"></div>
+          <div class="topbar-profile"><img src="https://ui-avatars.com/api/?name=Michael+Smith&background=10B981&color=fff&size=36&rounded=true&bold=true" alt="MS" class="topbar-profile-avatar"><div class="topbar-profile-info"><div class="topbar-profile-name">Michael Smith</div><div class="topbar-profile-role">IT Support Agent</div></div><svg class="topbar-profile-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </div>
+      </header>
+
+      <div class="content">
+        <!-- KPI Cards -->
+        <div class="grid grid-cols-5 gap-5 mb-6 stagger">
+          <div class="kpi-card animate-slide-up">
+            <div class="kpi-icon kpi-icon-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+            <div class="kpi-info"><div class="kpi-label">Total Tickets</div><div class="kpi-value">324</div><div class="kpi-trend kpi-trend-up"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>↗ 12% from last week</div></div>
+          </div>
+          <div class="kpi-card animate-slide-up">
+            <div class="kpi-icon kpi-icon-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg></div>
+            <div class="kpi-info"><div class="kpi-label">Open Tickets</div><div class="kpi-value">128</div><div class="kpi-trend kpi-trend-up"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>↗ 8% from last week</div></div>
+          </div>
+          <div class="kpi-card animate-slide-up">
+            <div class="kpi-icon kpi-icon-orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <div class="kpi-info"><div class="kpi-label">In Progress</div><div class="kpi-value">56</div><div class="kpi-trend kpi-trend-down"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/></svg>↘ 5% from last week</div></div>
+          </div>
+          <div class="kpi-card animate-slide-up">
+            <div class="kpi-icon kpi-icon-red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+            <div class="kpi-info"><div class="kpi-label">Overdue Tickets</div><div class="kpi-value">18</div><div class="kpi-trend kpi-trend-down"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/></svg>↘ 3% from last week</div></div>
+          </div>
+          <div class="kpi-card animate-slide-up">
+            <div class="kpi-icon kpi-icon-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+            <div class="kpi-info"><div class="kpi-label">Resolved Today</div><div class="kpi-value">32</div><div class="kpi-trend kpi-trend-up"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>↗ 18% from yesterday</div></div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-12 gap-6">
+          <!-- Left Column -->
+          <div class="col-span-8">
+            <!-- Recent Tickets Table -->
+            <div class="table-container mb-6 animate-slide-up">
+              <div class="table-header">
+                <h2 class="table-title">Recent Tickets</h2>
+                <a href="agent-all-tickets.html" class="table-link">View All Tickets</a>
+              </div>
+              <div class="table-tabs">
+                <button class="table-tab active">All Tickets</button>
+                <button class="table-tab">My Queue</button>
+                <button class="table-tab">Unassigned</button>
+              </div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Ticket ID</th>
+                    <th>Subject</th>
+                    <th>Requester</th>
+                    <th>Status</th>
+                    <th>Priority</th>
+                    <th>Updated</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td><a href="agent-ticket-detail.html" class="table-ticket-id">#TK-10532</a></td><td class="font-medium text-gray-900">VPN Connection Failed</td><td>John Doe</td><td><span class="badge badge-open">Open</span></td><td><span class="priority"><span class="priority-dot priority-dot-high"></span> High</span></td><td class="text-sm text-gray-500">2m ago</td><td class="text-gray-400"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg></td></tr>
+                  <tr><td><a href="#" class="table-ticket-id">#TK-10531</a></td><td class="font-medium text-gray-900">Outlook Not Syncing</td><td>Sarah Miller</td><td><span class="badge badge-inprogress">In Progress</span></td><td><span class="priority"><span class="priority-dot priority-dot-medium"></span> Medium</span></td><td class="text-sm text-gray-500">15m ago</td><td class="text-gray-400"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg></td></tr>
+                  <tr><td><a href="#" class="table-ticket-id">#TK-10530</a></td><td class="font-medium text-gray-900">Cannot Access Shared Drive</td><td>Robert Brown</td><td><span class="badge badge-pending">Pending</span></td><td><span class="priority"><span class="priority-dot priority-dot-medium"></span> Medium</span></td><td class="text-sm text-gray-500">1h ago</td><td class="text-gray-400"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg></td></tr>
+                  <tr><td><a href="#" class="table-ticket-id">#TK-10529</a></td><td class="font-medium text-gray-900">New Laptop Setup Request</td><td>Emily Johnson</td><td><span class="badge badge-open">Open</span></td><td><span class="priority"><span class="priority-dot priority-dot-low"></span> Low</span></td><td class="text-sm text-gray-500">1h ago</td><td class="text-gray-400"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg></td></tr>
+                  <tr><td><a href="#" class="table-ticket-id">#TK-10528</a></td><td class="font-medium text-gray-900">Software Installation</td><td>Michael Wong</td><td><span class="badge badge-inprogress">In Progress</span></td><td><span class="priority"><span class="priority-dot priority-dot-high"></span> High</span></td><td class="text-sm text-gray-500">2h ago</td><td class="text-gray-400"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg></td></tr>
+                  <tr><td><a href="#" class="table-ticket-id">#TK-10527</a></td><td class="font-medium text-gray-900">Printer Not Working</td><td>David Clark</td><td><span class="badge badge-pending">Pending</span></td><td><span class="priority"><span class="priority-dot priority-dot-low"></span> Low</span></td><td class="text-sm text-gray-500">3h ago</td><td class="text-gray-400"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg></td></tr>
+                  <tr><td><a href="#" class="table-ticket-id">#TK-10526</a></td><td class="font-medium text-gray-900">Request for Admin Access</td><td>Alicia Lee</td><td><span class="badge badge-open">Open</span></td><td><span class="priority"><span class="priority-dot priority-dot-high"></span> High</span></td><td class="text-sm text-gray-500">3h ago</td><td class="text-gray-400"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg></td></tr>
+                </tbody>
+              </table>
+              <div class="flex justify-center py-4 border-t border-gray-100">
+                <a href="agent-all-tickets.html" class="btn btn-ghost btn-sm">View All Tickets <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+              </div>
+            </div>
+
+            <!-- Bottom Row: Unassigned + Chart -->
+            <div class="grid grid-cols-2 gap-6">
+              <!-- Unassigned -->
+              <div class="card card-no-hover animate-slide-up">
+                <div class="card-header" style="padding: 16px 20px;">
+                  <h3 class="text-[15px] font-semibold text-gray-900">Unassigned Tickets <span class="ml-2 text-xs bg-red-50 text-red-600 px-2 py-0.5 rounded-full font-medium">7</span></h3>
+                  <a href="agent-unassigned.html" class="text-sm font-medium text-blue-600">View All</a>
+                </div>
+                <div class="card-body" style="padding: 8px 20px 16px;">
+                  <div class="space-y-3">
+                    <div class="flex items-center gap-3 py-2">
+                      <a href="#" class="table-ticket-id text-sm">#TK-10524</a>
+                      <span class="flex-1 text-sm text-gray-700 truncate">Login Issue – CRM System</span>
+                      <span class="priority text-xs"><span class="priority-dot priority-dot-medium" style="width:6px;height:6px;"></span> Medium</span>
+                      <span class="text-xs text-gray-400">30m ago</span>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+                    </div>
+                    <div class="flex items-center gap-3 py-2">
+                      <a href="#" class="table-ticket-id text-sm">#TK-10523</a>
+                      <span class="flex-1 text-sm text-gray-700 truncate">TeamViewer Access Request</span>
+                      <span class="priority text-xs"><span class="priority-dot priority-dot-low" style="width:6px;height:6px;"></span> Low</span>
+                      <span class="text-xs text-gray-400">45m ago</span>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+                    </div>
+                    <div class="flex items-center gap-3 py-2">
+                      <a href="#" class="table-ticket-id text-sm">#TK-10522</a>
+                      <span class="flex-1 text-sm text-gray-700 truncate">Issue with Slack Notifications</span>
+                      <span class="priority text-xs"><span class="priority-dot priority-dot-medium" style="width:6px;height:6px;"></span> Medium</span>
+                      <span class="text-xs text-gray-400">1h ago</span>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+                    </div>
+                    <div class="flex items-center gap-3 py-2">
+                      <a href="#" class="table-ticket-id text-sm">#TK-10521</a>
+                      <span class="flex-1 text-sm text-gray-700 truncate">Unable to Connect to Wi-Fi</span>
+                      <span class="priority text-xs"><span class="priority-dot priority-dot-high" style="width:6px;height:6px;"></span> High</span>
+                      <span class="text-xs text-gray-400">2h ago</span>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Ticket Breakdown Chart -->
+              <div class="card card-no-hover animate-slide-up">
+                <div class="card-header" style="padding:16px 20px;">
+                  <h3 class="text-[15px] font-semibold text-gray-900">Ticket Breakdown</h3>
+                  <select class="form-select" style="width:130px;height:32px;font-size:12px;padding:0 28px 0 10px;">
+                    <option>This Week</option>
+                    <option>Last Week</option>
+                    <option>This Month</option>
+                  </select>
+                </div>
+                <div class="card-body" style="padding:16px 20px;">
+                  <!-- Simple CSS bar chart -->
+                  <div class="flex items-end gap-6 justify-center" style="height:180px;">
+                    <div class="flex flex-col items-center gap-2">
+                      <span class="text-xs font-semibold text-gray-700">128</span>
+                      <div style="width:48px;height:128px;background:var(--success-500);border-radius:6px 6px 0 0;"></div>
+                      <span class="text-xs text-gray-500">Open</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-2">
+                      <span class="text-xs font-semibold text-gray-700">56</span>
+                      <div style="width:48px;height:56px;background:var(--primary-500);border-radius:6px 6px 0 0;"></div>
+                      <span class="text-xs text-gray-500">In Progress</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-2">
+                      <span class="text-xs font-semibold text-gray-700">74</span>
+                      <div style="width:48px;height:74px;background:var(--warning-500);border-radius:6px 6px 0 0;"></div>
+                      <span class="text-xs text-gray-500">Pending</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-2">
+                      <span class="text-xs font-semibold text-gray-700">48</span>
+                      <div style="width:48px;height:48px;background:var(--purple-500);border-radius:6px 6px 0 0;"></div>
+                      <span class="text-xs text-gray-500">Resolved</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-2">
+                      <span class="text-xs font-semibold text-gray-700">18</span>
+                      <div style="width:48px;height:18px;background:var(--gray-400);border-radius:6px 6px 0 0;"></div>
+                      <span class="text-xs text-gray-500">Closed</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column -->
+          <div class="col-span-4">
+            <!-- Tickets by Status (Donut) -->
+            <div class="card card-no-hover mb-6 animate-slide-up">
+              <div class="card-header" style="padding:16px 20px;">
+                <h3 class="text-[15px] font-semibold text-gray-900">Tickets by Status</h3>
+              </div>
+              <div class="card-body" style="padding:20px;">
+                <div class="flex items-center gap-6">
+                  <!-- CSS Donut -->
+                  <div class="relative" style="width:140px;height:140px;flex-shrink:0;">
+                    <svg viewBox="0 0 36 36" style="width:140px;height:140px;transform:rotate(-90deg);">
+                      <circle cx="18" cy="18" r="14" fill="none" stroke="#E2E8F0" stroke-width="4"/>
+                      <circle cx="18" cy="18" r="14" fill="none" stroke="#10B981" stroke-width="4" stroke-dasharray="34.3 65.7" stroke-dashoffset="0"/>
+                      <circle cx="18" cy="18" r="14" fill="none" stroke="#3B82F6" stroke-width="4" stroke-dasharray="14.9 85.1" stroke-dashoffset="-34.3"/>
+                      <circle cx="18" cy="18" r="14" fill="none" stroke="#F59E0B" stroke-width="4" stroke-dasharray="20.2 79.8" stroke-dashoffset="-49.2"/>
+                      <circle cx="18" cy="18" r="14" fill="none" stroke="#8B5CF6" stroke-width="4" stroke-dasharray="13.2 86.8" stroke-dashoffset="-69.4"/>
+                      <circle cx="18" cy="18" r="14" fill="none" stroke="#94A3B8" stroke-width="4" stroke-dasharray="5.3 94.7" stroke-dashoffset="-82.6"/>
+                    </svg>
+                    <div class="donut-center"><div class="donut-center-value" style="font-size:22px;">324</div><div class="donut-center-label">Total</div></div>
+                  </div>
+                  <div class="chart-legend" style="gap:8px;">
+                    <div class="chart-legend-item"><span class="chart-legend-dot" style="background:var(--success-500);"></span> Open <span class="chart-legend-value">128 (39%)</span></div>
+                    <div class="chart-legend-item"><span class="chart-legend-dot" style="background:var(--primary-500);"></span> In Progress <span class="chart-legend-value">56 (17%)</span></div>
+                    <div class="chart-legend-item"><span class="chart-legend-dot" style="background:var(--warning-500);"></span> Pending <span class="chart-legend-value">74 (23%)</span></div>
+                    <div class="chart-legend-item"><span class="chart-legend-dot" style="background:var(--purple-500);"></span> Resolved <span class="chart-legend-value">48 (15%)</span></div>
+                    <div class="chart-legend-item"><span class="chart-legend-dot" style="background:var(--gray-400);"></span> Closed <span class="chart-legend-value">18 (6%)</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SLA Breaches -->
+            <div class="card card-no-hover mb-6 animate-slide-up">
+              <div class="card-header" style="padding:16px 20px;">
+                <h3 class="text-[15px] font-semibold text-gray-900">SLA Breaches <span class="ml-2 text-xs bg-red-50 text-red-600 px-2 py-0.5 rounded-full font-medium">3</span></h3>
+                <a href="#" class="text-sm font-medium text-red-500">View All</a>
+              </div>
+              <div class="card-body" style="padding:8px 20px 16px;">
+                <div class="sla-breach-item">
+                  <a href="#" class="sla-breach-id text-sm">#TK-10456</a>
+                  <span class="sla-breach-subject">Database Connection Issue</span>
+                  <span class="sla-breach-time"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Overdue by 2h 15m</span>
+                </div>
+                <div class="sla-breach-item">
+                  <a href="#" class="sla-breach-id text-sm">#TK-10423</a>
+                  <span class="sla-breach-subject">Email Delivery Failure</span>
+                  <span class="sla-breach-time"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Overdue by 1h 45m</span>
+                </div>
+                <div class="sla-breach-item">
+                  <a href="#" class="sla-breach-id text-sm">#TK-10411</a>
+                  <span class="sla-breach-subject">Network Access Problem</span>
+                  <span class="sla-breach-time"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Overdue by 30m</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Activity Feed -->
+            <div class="card card-no-hover animate-slide-up">
+              <div class="card-header" style="padding:16px 20px;">
+                <h3 class="text-[15px] font-semibold text-gray-900">Activity Feed</h3>
+                <a href="#" class="text-sm font-medium text-blue-600">View All</a>
+              </div>
+              <div class="card-body" style="padding:8px 20px 16px;">
+                <div class="activity-item">
+                  <div class="activity-icon" style="background:var(--primary-50);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+                  <div class="activity-content"><div class="activity-text"><strong>Sarah Miller</strong> replied to ticket <a href="#" class="text-blue-600">#TK-10518</a><br><span class="text-gray-500">Re: Outlook Not Syncing</span></div></div>
+                  <span class="activity-time">10m ago</span>
+                </div>
+                <div class="activity-item">
+                  <div class="activity-icon" style="background:var(--success-50);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+                  <div class="activity-content"><div class="activity-text"><strong>You</strong> changed status of ticket <a href="#" class="text-blue-600">#TK-10516</a><br><span class="text-gray-500">New Laptop Setup Request</span></div></div>
+                  <span class="activity-time">25m ago</span>
+                </div>
+                <div class="activity-item">
+                  <div class="activity-icon" style="background:var(--warning-50);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+                  <div class="activity-content"><div class="activity-text"><strong>Robert Brown</strong> created ticket <a href="#" class="text-blue-600">#TK-10520</a><br><span class="text-gray-500">Cannot Access Shared Drive</span></div></div>
+                  <span class="activity-time">1h ago</span>
+                </div>
+                <div class="activity-item">
+                  <div class="activity-icon" style="background:var(--success-50);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+                  <div class="activity-content"><div class="activity-text">Ticket <a href="#" class="text-blue-600">#TK-10515</a> was resolved<br><span class="text-gray-500">Printer Not Working</span></div></div>
+                  <span class="activity-time">2h ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

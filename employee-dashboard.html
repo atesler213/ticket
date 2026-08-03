@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — TechCorp IT Support Portal</title>
+  <meta name="description" content="Employee dashboard for TechCorp IT Support Portal. View your tickets, assets, and get help from our IT team.">
+  <link rel="stylesheet" href="design-system.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','sans-serif']}}}}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+<body class="bg-[#F8FAFC]">
+  <div class="layout">
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar">
+      <!-- Logo -->
+      <div class="sidebar-logo">
+        <div class="sidebar-logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+            <polyline points="7.5 4.21 12 6.81 16.5 4.21"/>
+            <line x1="12" y1="22.08" x2="12" y2="11.73"/>
+          </svg>
+        </div>
+        <div class="sidebar-logo-text">
+          <span class="sidebar-logo-title">TechCorp</span>
+          <span class="sidebar-logo-subtitle">IT Support Portal</span>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="sidebar-nav">
+        <div class="sidebar-group">
+          <a href="employee-dashboard.html" class="sidebar-item active">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            Dashboard
+          </a>
+          <a href="employee-my-tickets.html" class="sidebar-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            My Tickets
+          </a>
+          <a href="employee-assets.html" class="sidebar-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            Assets
+          </a>
+          <a href="employee-knowledgebase.html" class="sidebar-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            Knowledgebase
+          </a>
+          <a href="#" class="sidebar-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            Services
+          </a>
+        </div>
+
+        <div class="sidebar-group" style="margin-top: auto; padding-top: 24px;">
+          <a href="employee-profile.html" class="sidebar-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            Profile
+          </a>
+          <a href="employee-notifications.html" class="sidebar-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            Notifications
+          </a>
+          <a href="employee-settings.html" class="sidebar-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            Settings
+          </a>
+        </div>
+      </nav>
+
+      <!-- Sidebar Footer -->
+      <div class="sidebar-footer">
+        <div class="sidebar-help-card">
+          <div class="sidebar-help-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          </div>
+          <div class="sidebar-help-card-title">Need Help?</div>
+          <div class="sidebar-help-card-text">Our support team is here for you.</div>
+          <a href="#" class="sidebar-help-card-link">
+            Contact IT Support
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="main-content">
+
+      <!-- Top Bar -->
+      <header class="topbar">
+        <div class="topbar-left"></div>
+        <div class="topbar-center">
+          <div class="topbar-search">
+            <svg class="topbar-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" placeholder="Search tickets, knowledgebase, assets...">
+            <span class="topbar-search-shortcut">⌘ K</span>
+          </div>
+        </div>
+        <div class="topbar-right">
+          <button class="topbar-icon-btn" id="notifications-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            <span class="badge">2</span>
+          </button>
+          <div class="topbar-divider"></div>
+          <div class="topbar-profile" id="profile-menu">
+            <img src="https://ui-avatars.com/api/?name=John+Doe&background=2563EB&color=fff&size=36&rounded=true&bold=true" alt="John Doe" class="topbar-profile-avatar">
+            <div class="topbar-profile-info">
+              <div class="topbar-profile-name">John Doe</div>
+              <div class="topbar-profile-role">IT Department</div>
+            </div>
+            <svg class="topbar-profile-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </div>
+      </header>
+
+      <!-- Page Content -->
+      <div class="content">
+
+        <!-- Welcome Section -->
+        <div class="mb-8 animate-slide-up">
+          <h1 class="text-2xl font-bold text-gray-900 mb-1">Welcome back, John! 👋</h1>
+          <p class="text-gray-500 text-[15px]">How can we help you today?</p>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="grid grid-cols-3 gap-5 mb-8 stagger">
+          <!-- Report an Issue -->
+          <div class="action-card animate-slide-up">
+            <div class="action-card-icon action-card-icon-blue">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
+            <div class="action-card-content">
+              <div class="action-card-title">Report an Issue</div>
+              <div class="action-card-desc">Submit an IT issue and get help from our team</div>
+            </div>
+            <svg class="action-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+
+          <!-- Request Hardware/Software -->
+          <div class="action-card animate-slide-up">
+            <div class="action-card-icon action-card-icon-green">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <div class="action-card-content">
+              <div class="action-card-title">Request Hardware / Software</div>
+              <div class="action-card-desc">Request new hardware or software</div>
+            </div>
+            <svg class="action-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+
+          <!-- Knowledgebase / FAQ -->
+          <div class="action-card animate-slide-up">
+            <div class="action-card-icon action-card-icon-purple">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            </div>
+            <div class="action-card-content">
+              <div class="action-card-title">Knowledgebase / FAQ</div>
+              <div class="action-card-desc">Find answers to common questions</div>
+            </div>
+            <svg class="action-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+        </div>
+
+        <!-- Main Grid: Tickets + Right Sidebar -->
+        <div class="grid grid-cols-12 gap-6">
+
+          <!-- Left: Active Tickets -->
+          <div class="col-span-9">
+            <!-- My Active Tickets -->
+            <div class="table-container mb-6 animate-slide-up">
+              <div class="table-header">
+                <h2 class="table-title">My Active Tickets</h2>
+                <a href="employee-my-tickets.html" class="table-link">View All Tickets</a>
+              </div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Ticket ID</th>
+                    <th>Title</th>
+                    <th>Category</th>
+                    <th>Status</th>
+                    <th>Priority</th>
+                    <th>Last Update</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a href="employee-ticket-detail.html" class="table-ticket-id">#TK-10492</a></td>
+                    <td class="font-medium text-gray-900">VPN Connection Failed</td>
+                    <td>Network / VPN</td>
+                    <td><span class="badge badge-inprogress">In Progress</span></td>
+                    <td><span class="priority"><span class="priority-dot priority-dot-high"></span> High</span></td>
+                    <td class="text-gray-500 text-sm">May 12, 2025<br>10:45 AM</td>
+                    <td class="text-gray-400"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></td>
+                  </tr>
+                  <tr>
+                    <td><a href="#" class="table-ticket-id">#TK-10481</a></td>
+                    <td class="font-medium text-gray-900">Outlook Not Syncing</td>
+                    <td>Software</td>
+                    <td><span class="badge badge-open">Open</span></td>
+                    <td><span class="priority"><span class="priority-dot priority-dot-medium"></span> Medium</span></td>
+                    <td class="text-gray-500 text-sm">May 12, 2025<br>09:15 AM</td>
+                    <td class="text-gray-400"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></td>
+                  </tr>
+                  <tr>
+                    <td><a href="#" class="table-ticket-id">#TK-10463</a></td>
+                    <td class="font-medium text-gray-900">Access to Shared Drive</td>
+                    <td>Access / Permissions</td>
+                    <td><span class="badge badge-pending">Pending</span></td>
+                    <td><span class="priority"><span class="priority-dot priority-dot-medium"></span> Medium</span></td>
+                    <td class="text-gray-500 text-sm">May 11, 2025<br>04:30 PM</td>
+                    <td class="text-gray-400"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></td>
+                  </tr>
+                  <tr>
+                    <td><a href="#" class="table-ticket-id">#TK-10421</a></td>
+                    <td class="font-medium text-gray-900">Laptop Screen Flickering</td>
+                    <td>IT Hardware</td>
+                    <td><span class="badge badge-inprogress">In Progress</span></td>
+                    <td><span class="priority"><span class="priority-dot priority-dot-high"></span> High</span></td>
+                    <td class="text-gray-500 text-sm">May 10, 2025<br>02:20 PM</td>
+                    <td class="text-gray-400"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></td>
+                  </tr>
+                  <tr>
+                    <td><a href="#" class="table-ticket-id">#TK-10398</a></td>
+                    <td class="font-medium text-gray-900">Software Installation</td>
+                    <td>Software</td>
+                    <td><span class="badge badge-resolved">Resolved</span></td>
+                    <td><span class="priority"><span class="priority-dot priority-dot-low"></span> Low</span></td>
+                    <td class="text-gray-500 text-sm">May 09, 2025<br>11:05 AM</td>
+                    <td class="text-gray-400"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Knowledgebase Section -->
+            <div class="animate-slide-up">
+              <div class="flex items-center justify-between mb-5">
+                <h2 class="text-lg font-semibold text-gray-900">Knowledgebase</h2>
+                <a href="employee-knowledgebase.html" class="table-link">View All Articles</a>
+              </div>
+              <div class="grid grid-cols-4 gap-4">
+                <div class="kb-category-card">
+                  <div class="kb-category-icon" style="background: var(--primary-50); color: var(--primary-600);">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                  </div>
+                  <div class="kb-category-title">Getting Started</div>
+                  <div class="kb-category-desc">New to the portal? Learn the basics.</div>
+                </div>
+                <div class="kb-category-card">
+                  <div class="kb-category-icon" style="background: var(--success-50); color: var(--success-600);">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  </div>
+                  <div class="kb-category-title">Account & Access</div>
+                  <div class="kb-category-desc">Manage your account and access issues.</div>
+                </div>
+                <div class="kb-category-card">
+                  <div class="kb-category-icon" style="background: var(--warning-50); color: var(--warning-600);">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+                  </div>
+                  <div class="kb-category-title">Network & VPN</div>
+                  <div class="kb-category-desc">Find solutions for network problems.</div>
+                </div>
+                <div class="kb-category-card">
+                  <div class="kb-category-icon" style="background: var(--danger-50); color: var(--danger-600);">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                  </div>
+                  <div class="kb-category-title">Security</div>
+                  <div class="kb-category-desc">Security tips and best practices.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Sidebar -->
+          <div class="col-span-3">
+            <!-- My Assigned Assets -->
+            <div class="card card-no-hover mb-6 animate-slide-up">
+              <div class="card-header" style="padding: 16px 20px;">
+                <h3 class="text-[15px] font-semibold text-gray-900">My Assigned Assets</h3>
+                <a href="employee-assets.html" class="text-sm font-medium text-blue-600 hover:text-blue-700">View All Assets</a>
+              </div>
+              <div class="card-body" style="padding: 12px 20px;">
+                <div class="asset-item">
+                  <div class="asset-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                  </div>
+                  <div class="asset-info">
+                    <div class="asset-name">MacBook Pro 16"</div>
+                    <div class="asset-serial">Serial: CO2F66XYZ123</div>
+                  </div>
+                </div>
+                <div class="asset-item">
+                  <div class="asset-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                  </div>
+                  <div class="asset-info">
+                    <div class="asset-name">Dell 27 Monitor</div>
+                    <div class="asset-serial">Serial: DELL27-8HJ2JD</div>
+                  </div>
+                </div>
+                <div class="asset-item">
+                  <div class="asset-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="6" rx="1"/><rect x="4" y="7" width="2" height="0.01"/><rect x="8" y="7" width="2" height="0.01"/></svg>
+                  </div>
+                  <div class="asset-info">
+                    <div class="asset-name">Logitech MX Keys</div>
+                    <div class="asset-serial">Serial: LMXK-7B492H</div>
+                  </div>
+                </div>
+                <div class="asset-item">
+                  <div class="asset-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                  </div>
+                  <div class="asset-info">
+                    <div class="asset-name">iPhone 14 Pro</div>
+                    <div class="asset-serial">Serial: IP14P-9XK7L</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Recent Announcements -->
+            <div class="card card-no-hover animate-slide-up">
+              <div class="card-header" style="padding: 16px 20px;">
+                <h3 class="text-[15px] font-semibold text-gray-900">Recent Announcements</h3>
+                <a href="#" class="text-sm font-medium text-blue-600 hover:text-blue-700">View All</a>
+              </div>
+              <div class="card-body" style="padding: 12px 20px;">
+                <div class="announcement-item">
+                  <div class="announcement-dot" style="background: var(--success-500);"></div>
+                  <div class="announcement-content">
+                    <div class="announcement-title">VPN Maintenance – May 18, 2025</div>
+                    <div class="announcement-text">Scheduled VPN maintenance on Sunday, May 18 from 01:00 AM to 03:00 AM.</div>
+                    <div class="announcement-date">May 12, 2025</div>
+                  </div>
+                </div>
+                <div class="announcement-item">
+                  <div class="announcement-dot" style="background: var(--primary-500);"></div>
+                  <div class="announcement-content">
+                    <div class="announcement-title">New Password Policy Update</div>
+                    <div class="announcement-text">Our password policy has been updated for better security.</div>
+                    <div class="announcement-date">May 08, 2025</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+  </div>
+</body>
+</html>

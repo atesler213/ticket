@@ -1,0 +1,23 @@
+{
+  "metrics": [
+    {
+      "title": "Open Tickets",
+      "value": 3,
+      "trend": 12,
+      "trendLabel": "vs last week"
+    },
+    {
+      "title": "Resolved",
+      "value": 15,
+      "trend": -5,
+      "trendLabel": "vs last week"
+    },
+    {
+      "title": "Avg Resolution",
+      "value": "4h 30m",
+      "trend": -15,
+      "trendLabel": "improvement"
+    }
+  ],
+  "recentActivity": []
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "comp-1",
+    "name": "TechCorp",
+    "logo": null,
+    "favicon": null,
+    "primaryColor": "#2563EB",
+    "secondaryColor": "#1E40AF",
+    "accentColor": "#10B981",
+    "sidebarColor": "#0F172A",
+    "theme": "light",
+    "language": "en-US",
+    "timezone": "America/Los_Angeles",
+    "supportEmail": "support@techcorpglobal.com",
+    "supportPhone": "1-800-555-0199",
+    "subdomain": "techcorp",
+    "customDomain": null,
+    "createdAt": "2024-01-15T08:00:00Z"
+  },
+  {
+    "id": "comp-2",
+    "name": "Acme Innovations",
+    "logo": null,
+    "favicon": null,
+    "primaryColor": "#7C3AED",
+    "secondaryColor": "#5B21B6",
+    "accentColor": "#F59E0B",
+    "sidebarColor": "#18181B",
+    "theme": "dark",
+    "language": "en-GB",
+    "timezone": "Europe/London",
+    "supportEmail": "help@acme.co.uk",
+    "supportPhone": "+44 20 7946 0958",
+    "subdomain": "acme",
+    "customDomain": "support.acme.co.uk",
+    "createdAt": "2024-03-10T10:30:00Z"
+  }
+]

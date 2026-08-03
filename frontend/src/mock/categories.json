@@ -1,0 +1,26 @@
+[
+  {
+    "id": "cat-1",
+    "companyId": "comp-1",
+    "name": "Network & Connectivity",
+    "description": "Issues with VPN, Wi-Fi, Internet",
+    "defaultDepartmentId": "dept-1",
+    "defaultPriority": "High"
+  },
+  {
+    "id": "cat-2",
+    "companyId": "comp-1",
+    "name": "Access Request",
+    "description": "Software, systems, or repository access",
+    "defaultDepartmentId": "dept-1",
+    "defaultPriority": "Medium"
+  },
+  {
+    "id": "cat-3",
+    "companyId": "comp-1",
+    "name": "Hardware Issue",
+    "description": "Broken laptops, monitors, phones",
+    "defaultDepartmentId": "dept-2",
+    "defaultPriority": "Medium"
+  }
+]

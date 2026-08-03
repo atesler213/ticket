@@ -1,0 +1,29 @@
+[
+  {
+    "id": "sla-1",
+    "name": "Default Global SLA",
+    "description": "Applies to all tickets that do not match a more specific policy.",
+    "isActive": true,
+    "conditions": "All tickets",
+    "targets": [
+      { "priority": "Low", "firstResponseMinutes": 480, "resolutionMinutes": 4320 },
+      { "priority": "Medium", "firstResponseMinutes": 240, "resolutionMinutes": 1440 },
+      { "priority": "High", "firstResponseMinutes": 60, "resolutionMinutes": 480 },
+      { "priority": "Urgent", "firstResponseMinutes": 15, "resolutionMinutes": 120 }
+    ],
+    "createdAt": "2024-01-01T00:00:00Z",
+    "updatedAt": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "sla-2",
+    "name": "VIP Users SLA",
+    "description": "Applies when Requester Department is 'Executive'.",
+    "isActive": true,
+    "conditions": "Requester Department = Executive",
+    "targets": [
+      { "priority": "All Priorities", "firstResponseMinutes": 15, "resolutionMinutes": 240 }
+    ],
+    "createdAt": "2024-01-05T00:00:00Z",
+    "updatedAt": "2024-02-10T00:00:00Z"
+  }
+]

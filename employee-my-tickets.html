@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Tickets — TechCorp IT Support Portal</title>
+  <meta name="description" content="View and manage your IT support tickets.">
+  <link rel="stylesheet" href="design-system.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','sans-serif']}}}}</script>
+  <style>body{font-family:'Inter',sans-serif;}</style>
+</head>
+<body class="bg-[#F8FAFC]">
+  <div class="layout">
+    <!-- SIDEBAR (Employee) -->
+    <aside class="sidebar">
+      <div class="sidebar-logo"><div class="sidebar-logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="7.5 4.21 12 6.81 16.5 4.21"/><line x1="12" y1="22.08" x2="12" y2="11.73"/></svg></div><div class="sidebar-logo-text"><span class="sidebar-logo-title">TechCorp</span><span class="sidebar-logo-subtitle">IT Support Portal</span></div></div>
+      <nav class="sidebar-nav">
+        <div class="sidebar-group">
+          <a href="employee-dashboard.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Dashboard</a>
+          <a href="employee-my-tickets.html" class="sidebar-item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>My Tickets</a>
+          <a href="employee-assets.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>Assets</a>
+          <a href="employee-knowledgebase.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>Knowledgebase</a>
+          <a href="#" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09"/></svg>Services</a>
+        </div>
+        <div class="sidebar-group" style="margin-top:auto;padding-top:24px;">
+          <a href="employee-profile.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Profile</a>
+          <a href="employee-notifications.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>Notifications</a>
+          <a href="employee-settings.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09"/></svg>Settings</a>
+        </div>
+      </nav>
+      <div class="sidebar-footer"><div class="sidebar-help-card"><div class="sidebar-help-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div><div class="sidebar-help-card-title">Need Help?</div><div class="sidebar-help-card-text">Our support team is here for you.</div><a href="#" class="sidebar-help-card-link">Contact IT Support <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      <header class="topbar">
+        <div class="topbar-left"></div>
+        <div class="topbar-center"><div class="topbar-search"><svg class="topbar-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input type="text" placeholder="Search tickets, knowledgebase, assets..."><span class="topbar-search-shortcut">⌘ K</span></div></div>
+        <div class="topbar-right">
+          <button class="topbar-icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><span class="badge">2</span></button>
+          <div class="topbar-divider"></div>
+          <div class="topbar-profile"><img src="https://ui-avatars.com/api/?name=John+Doe&background=2563EB&color=fff&size=36&rounded=true&bold=true" alt="John Doe" class="topbar-profile-avatar"><div class="topbar-profile-info"><div class="topbar-profile-name">John Doe</div><div class="topbar-profile-role">IT Department</div></div><svg class="topbar-profile-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </div>
+      </header>
+
+      <div class="content">
+        <!-- Page Header -->
+        <div class="flex items-center justify-between mb-8 animate-slide-up">
+          <div>
+            <h1 class="text-2xl font-bold text-gray-900 mb-1">My Tickets</h1>
+            <p class="text-gray-500 text-[15px]">View and track all your support requests.</p>
+          </div>
+          <a href="employee-create-ticket.html" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Create Ticket
+          </a>
+        </div>
+
+        <!-- Filters -->
+        <div class="card card-no-hover mb-6 animate-slide-up">
+          <div class="card-body-compact flex items-center gap-4 flex-wrap">
+            <div class="relative flex-1 min-w-[200px]">
+              <svg style="position:absolute;left:12px;top:50%;transform:translateY(-50%);width:16px;height:16px;color:var(--gray-400);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <input type="text" class="form-input" style="padding-left:36px;height:38px;" placeholder="Search tickets...">
+            </div>
+            <select class="form-select" style="width:150px;height:38px;font-size:13px;">
+              <option>All Status</option>
+              <option>Open</option>
+              <option>In Progress</option>
+              <option>Pending</option>
+              <option>Resolved</option>
+              <option>Closed</option>
+            </select>
+            <select class="form-select" style="width:150px;height:38px;font-size:13px;">
+              <option>All Priority</option>
+              <option>Urgent</option>
+              <option>High</option>
+              <option>Medium</option>
+              <option>Low</option>
+            </select>
+            <select class="form-select" style="width:160px;height:38px;font-size:13px;">
+              <option>All Categories</option>
+              <option>IT Hardware</option>
+              <option>Software</option>
+              <option>Network / VPN</option>
+              <option>Access / Permissions</option>
+              <option>Email / Outlook</option>
+              <option>Security</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="table-container animate-slide-up">
+          <div class="table-tabs">
+            <button class="table-tab active">All Tickets <span class="ml-1.5 text-xs bg-blue-50 text-blue-600 px-2 py-0.5 rounded-full font-medium">12</span></button>
+            <button class="table-tab">Open <span class="ml-1.5 text-xs bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full font-medium">4</span></button>
+            <button class="table-tab">In Progress <span class="ml-1.5 text-xs bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full font-medium">3</span></button>
+            <button class="table-tab">Pending <span class="ml-1.5 text-xs bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full font-medium">2</span></button>
+            <button class="table-tab">Resolved <span class="ml-1.5 text-xs bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full font-medium">3</span></button>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Ticket ID</th>
+                <th>Subject</th>
+                <th>Category</th>
+                <th>Status</th>
+                <th>Priority</th>
+                <th>Created</th>
+                <th>Last Update</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a href="employee-ticket-detail.html" class="table-ticket-id">#TK-10492</a></td>
+                <td class="font-medium text-gray-900">VPN Connection Failed</td>
+                <td>Network / VPN</td>
+                <td><span class="badge badge-inprogress">In Progress</span></td>
+                <td><span class="priority"><span class="priority-dot priority-dot-high"></span> High</span></td>
+                <td class="text-sm text-gray-500">May 12, 2025</td>
+                <td class="text-sm text-gray-500">2 hours ago</td>
+                <td><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-400"><polyline points="9 18 15 12 9 6"/></svg></td>
+              </tr>
+              <tr>
+                <td><a href="#" class="table-ticket-id">#TK-10481</a></td>
+                <td class="font-medium text-gray-900">Outlook Not Syncing</td>
+                <td>Software</td>
+                <td><span class="badge badge-open">Open</span></td>
+                <td><span class="priority"><span class="priority-dot priority-dot-medium"></span> Medium</span></td>
+                <td class="text-sm text-gray-500">May 12, 2025</td>
+                <td class="text-sm text-gray-500">4 hours ago</td>
+                <td><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-400"><polyline points="9 18 15 12 9 6"/></svg></td>
+              </tr>
+              <tr>
+                <td><a href="#" class="table-ticket-id">#TK-10463</a></td>
+                <td class="font-medium text-gray-900">Access to Shared Drive</td>
+                <td>Access / Permissions</td>
+                <td><span class="badge badge-pending">Pending</span></td>
+                <td><span class="priority"><span class="priority-dot priority-dot-medium"></span> Medium</span></td>
+                <td class="text-sm text-gray-500">May 11, 2025</td>
+                <td class="text-sm text-gray-500">1 day ago</td>
+                <td><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-400"><polyline points="9 18 15 12 9 6"/></svg></td>
+              </tr>
+              <tr>
+                <td><a href="#" class="table-ticket-id">#TK-10421</a></td>
+                <td class="font-medium text-gray-900">Laptop Screen Flickering</td>
+                <td>IT Hardware</td>
+                <td><span class="badge badge-inprogress">In Progress</span></td>
+                <td><span class="priority"><span class="priority-dot priority-dot-high"></span> High</span></td>
+                <td class="text-sm text-gray-500">May 10, 2025</td>
+                <td class="text-sm text-gray-500">2 days ago</td>
+                <td><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-400"><polyline points="9 18 15 12 9 6"/></svg></td>
+              </tr>
+              <tr>
+                <td><a href="#" class="table-ticket-id">#TK-10398</a></td>
+                <td class="font-medium text-gray-900">Software Installation Request</td>
+                <td>Software</td>
+                <td><span class="badge badge-resolved">Resolved</span></td>
+                <td><span class="priority"><span class="priority-dot priority-dot-low"></span> Low</span></td>
+                <td class="text-sm text-gray-500">May 09, 2025</td>
+                <td class="text-sm text-gray-500">3 days ago</td>
+                <td><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-400"><polyline points="9 18 15 12 9 6"/></svg></td>
+              </tr>
+              <tr>
+                <td><a href="#" class="table-ticket-id">#TK-10385</a></td>
+                <td class="font-medium text-gray-900">Cannot Access Email on Mobile</td>
+                <td>Email / Outlook</td>
+                <td><span class="badge badge-open">Open</span></td>
+                <td><span class="priority"><span class="priority-dot priority-dot-medium"></span> Medium</span></td>
+                <td class="text-sm text-gray-500">May 08, 2025</td>
+                <td class="text-sm text-gray-500">4 days ago</td>
+                <td><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-400"><polyline points="9 18 15 12 9 6"/></svg></td>
+              </tr>
+              <tr>
+                <td><a href="#" class="table-ticket-id">#TK-10370</a></td>
+                <td class="font-medium text-gray-900">Printer Not Working</td>
+                <td>IT Hardware</td>
+                <td><span class="badge badge-resolved">Resolved</span></td>
+                <td><span class="priority"><span class="priority-dot priority-dot-low"></span> Low</span></td>
+                <td class="text-sm text-gray-500">May 07, 2025</td>
+                <td class="text-sm text-gray-500">5 days ago</td>
+                <td><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-400"><polyline points="9 18 15 12 9 6"/></svg></td>
+              </tr>
+              <tr>
+                <td><a href="#" class="table-ticket-id">#TK-10352</a></td>
+                <td class="font-medium text-gray-900">Password Reset Request</td>
+                <td>Access / Permissions</td>
+                <td><span class="badge badge-closed">Closed</span></td>
+                <td><span class="priority"><span class="priority-dot priority-dot-low"></span> Low</span></td>
+                <td class="text-sm text-gray-500">May 05, 2025</td>
+                <td class="text-sm text-gray-500">7 days ago</td>
+                <td><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-400"><polyline points="9 18 15 12 9 6"/></svg></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- Pagination -->
+          <div class="pagination">
+            <div class="pagination-info">Showing 1–8 of 12 tickets</div>
+            <div class="pagination-pages">
+              <button class="pagination-btn" disabled><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button>
+              <button class="pagination-btn active">1</button>
+              <button class="pagination-btn">2</button>
+              <button class="pagination-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

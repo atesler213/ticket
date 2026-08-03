@@ -1,0 +1,23 @@
+[
+  {
+    "id": "role-1",
+    "companyId": "comp-1",
+    "name": "System Administrator",
+    "description": "Full access to all modules and system settings",
+    "isSystem": true
+  },
+  {
+    "id": "role-2",
+    "companyId": "comp-1",
+    "name": "Support Agent",
+    "description": "Standard agent access to tickets and KB",
+    "isSystem": true
+  },
+  {
+    "id": "role-3",
+    "companyId": "comp-1",
+    "name": "Employee",
+    "description": "Basic portal access for creating and tracking personal tickets",
+    "isSystem": true
+  }
+]

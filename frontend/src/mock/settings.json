@@ -1,0 +1,13 @@
+[
+  {
+    "id": "set-1",
+    "companyId": "comp-1",
+    "allowGuestTickets": false,
+    "defaultTimezone": "America/Los_Angeles",
+    "defaultLanguage": "en-US",
+    "ticketPrefix": "TC-",
+    "requireApprovalForAssets": true,
+    "smtpServer": "smtp.office365.com",
+    "smtpPort": 587
+  }
+]

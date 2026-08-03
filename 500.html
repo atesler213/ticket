@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>500 Server Error — TechCorp IT Support Portal</title>
+  <link rel="stylesheet" href="design-system.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','sans-serif']}}}}</script>
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #F8FAFC; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+  </style>
+</head>
+<body>
+  <div class="text-center animate-slide-up max-w-md p-6">
+    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-red-100 text-red-600 mb-4">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="32" height="32"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    </div>
+    <h1 class="text-2xl font-bold text-gray-900 mb-2">Internal Server Error</h1>
+    <p class="text-gray-500 mb-8">Something went wrong on our end. Our engineering team has been notified. Please try again later.</p>
+    <div class="flex items-center justify-center gap-3">
+      <button onclick="window.location.reload()" class="btn btn-secondary">Try Again</button>
+      <a href="employee-dashboard.html" class="btn btn-primary">Return Home</a>
+    </div>
+  </div>
+</body>
+</html>

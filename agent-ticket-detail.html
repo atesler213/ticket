@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ticket #TK-10531 — TechCorp IT Support Portal</title>
+  <meta name="description" content="Support agent view for ticket #TK-10531 — Outlook Not Syncing.">
+  <link rel="stylesheet" href="design-system.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','sans-serif']}}}}</script>
+  <style>body{font-family:'Inter',sans-serif;}</style>
+</head>
+<body class="bg-[#F8FAFC]">
+  <div class="layout">
+    <!-- SIDEBAR (Agent) -->
+    <aside class="sidebar">
+      <div class="sidebar-logo"><div class="sidebar-logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="7.5 4.21 12 6.81 16.5 4.21"/><line x1="12" y1="22.08" x2="12" y2="11.73"/></svg></div><div class="sidebar-logo-text"><span class="sidebar-logo-title">TechCorp</span><span class="sidebar-logo-subtitle">IT Support Portal</span></div></div>
+      <nav class="sidebar-nav">
+        <div class="sidebar-group">
+          <div class="sidebar-group-label">MAIN</div>
+          <a href="agent-dashboard.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Dashboard</a>
+          <a href="agent-all-tickets.html" class="sidebar-item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>All Tickets<span class="sidebar-item-badge">12</span></a>
+          <a href="agent-my-queue.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>My Queue<span class="sidebar-item-badge">5</span></a>
+          <a href="agent-unassigned.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>Unassigned<span class="sidebar-item-badge">7</span></a>
+          <a href="#" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Overdue<span class="sidebar-item-badge">3</span></a>
+        </div>
+        <div class="sidebar-group">
+          <div class="sidebar-group-label">MANAGEMENT</div>
+          <a href="agent-users.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Users</a>
+          <a href="agent-assets.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/></svg>Assets</a>
+          <a href="agent-departments.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Departments</a>
+          <a href="agent-knowledgebase.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>Knowledgebase</a>
+        </div>
+        <div class="sidebar-group">
+          <div class="sidebar-group-label">REPORTS</div>
+          <a href="agent-reports.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>Reports</a>
+          <a href="#" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>Analytics</a>
+        </div>
+        <div class="sidebar-group">
+          <div class="sidebar-group-label">ADMIN</div>
+          <a href="#" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg>System Settings</a>
+          <a href="#" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/></svg>Audit Logs</a>
+        </div>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="sidebar-user"><img src="https://ui-avatars.com/api/?name=Michael+Smith&background=10B981&color=fff&size=36&rounded=true&bold=true" alt="MS" class="sidebar-user-avatar"><div class="sidebar-user-info"><div class="sidebar-user-name">Michael Smith</div><div class="sidebar-user-role">IT Support Agent</div><div class="sidebar-user-status">Online</div></div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+        <button class="sidebar-collapse-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>Collapse</button>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      <!-- Topbar with breadcrumb + actions -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <div class="topbar-breadcrumb">
+            <a href="agent-all-tickets.html">All Tickets</a>
+            <span class="separator">›</span>
+            <span class="current">Ticket #TK-10531</span>
+          </div>
+        </div>
+        <div class="topbar-right" style="gap:10px;">
+          <button class="btn btn-ghost btn-sm" style="width:36px;padding:0;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg></button>
+          <button class="btn btn-secondary">Close Ticket</button>
+          <div class="relative">
+            <button class="btn btn-primary">Update Status <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="6 9 12 15 18 9"/></svg></button>
+          </div>
+        </div>
+      </header>
+
+      <div class="content">
+        <div class="flex gap-6">
+          <!-- Left: Ticket Content -->
+          <div class="flex-1 min-w-0">
+            <!-- Ticket Header -->
+            <div class="card card-no-hover mb-5 animate-slide-up">
+              <div class="card-body" style="padding:24px;">
+                <div class="flex items-start justify-between mb-3">
+                  <div class="flex items-center gap-3">
+                    <h1 class="text-xl font-bold text-gray-900">Outlook Not Syncing</h1>
+                    <span class="badge badge-inprogress">In Progress</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="priority"><span class="priority-dot priority-dot-medium"></span> Medium</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                  </div>
+                </div>
+                <div class="flex items-center gap-4 text-sm text-gray-500">
+                  <span class="flex items-center gap-1.5"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>#TK-10531</span>
+                  <span>•</span><span>Created: May 12, 2025 09:15 AM</span>
+                  <span>•</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>Updated: May 12, 2025 11:45 AM</span>
+                  <span>•</span><span>via Portal</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Content Tabs -->
+            <div class="card card-no-hover animate-slide-up">
+              <div class="tabs" style="padding:0 24px;">
+                <button class="tab active">Conversation</button>
+                <button class="tab">Details</button>
+                <button class="tab">Assets <span class="tab-count">1</span></button>
+                <button class="tab">Tasks <span class="tab-count">2</span></button>
+                <button class="tab">Related Tickets</button>
+                <button class="tab">History</button>
+              </div>
+
+              <!-- Conversation -->
+              <div class="conversation">
+                <!-- Requester Message -->
+                <div class="conversation-message">
+                  <div class="conversation-message-header">
+                    <div class="avatar avatar-blue">JD</div>
+                    <div class="conversation-message-name">John Doe</div>
+                    <span class="badge-requester">Requester</span>
+                    <span class="conversation-message-time">May 12, 2025 09:15 AM</span>
+                  </div>
+                  <div class="conversation-message-body">
+                    <p>Hi Team,</p><br>
+                    <p>My Outlook is not syncing emails since this morning. I can send emails but cannot receive any new messages. I've already tried restarting Outlook and my computer, but the issue persists.</p><br>
+                    <p>Please assist.</p>
+                    <div class="conversation-attachment">
+                      <svg class="conversation-attachment-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                      <span class="conversation-attachment-name">outlook-error.png</span>
+                      <span class="conversation-attachment-size">238 KB</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Agent Reply -->
+                <div class="conversation-message">
+                  <div class="conversation-message-header">
+                    <div class="avatar avatar-green">MS</div>
+                    <div class="conversation-message-name">Michael Smith</div>
+                    <span class="badge-agent">Agent</span>
+                    <span class="conversation-message-time">May 12, 2025 09:45 AM</span>
+                  </div>
+                  <div class="conversation-message-body">
+                    <p>Hi John,</p><br>
+                    <p>Thanks for reaching out.<br>We are looking into the issue. Could you please try resetting your Outlook profile as per the steps in this guide and let us know if that helps?</p>
+                    <div class="conversation-attachment" style="border-color:#FCA5A5;">
+                      <svg class="conversation-attachment-icon" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                      <span class="conversation-attachment-name" style="color:#EF4444;">Reset_Outlook_Profile_Guide.pdf</span>
+                      <span class="conversation-attachment-size">512 KB</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Requester Reply -->
+                <div class="conversation-message">
+                  <div class="conversation-message-header">
+                    <div class="avatar avatar-blue">JD</div>
+                    <div class="conversation-message-name">John Doe</div>
+                    <span class="badge-requester">Requester</span>
+                    <span class="conversation-message-time">May 12, 2025 10:15 AM</span>
+                  </div>
+                  <div class="conversation-message-body">
+                    <p>Hi Michael,<br>I followed the steps, but the issue is still the same.<br>Also attaching the error I'm getting.</p>
+                    <div class="conversation-attachment">
+                      <svg class="conversation-attachment-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                      <span class="conversation-attachment-name">outlook-error-2.png</span>
+                      <span class="conversation-attachment-size">194 KB</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Agent Reply 2 -->
+                <div class="conversation-message">
+                  <div class="conversation-message-header">
+                    <div class="avatar avatar-green">MS</div>
+                    <div class="conversation-message-name">Michael Smith</div>
+                    <span class="badge-agent">Agent</span>
+                    <span class="conversation-message-time">May 12, 2025 10:30 AM</span>
+                  </div>
+                  <div class="conversation-message-body">
+                    <p>Thanks for confirming.<br>We will escalate this to our Microsoft 365 team and update you shortly.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Reply Editor -->
+              <div class="reply-editor">
+                <div class="reply-editor-tabs">
+                  <button class="reply-editor-tab active">Public Reply</button>
+                  <button class="reply-editor-tab">Internal Note</button>
+                </div>
+                <textarea class="reply-editor-input" placeholder="Type your reply..." rows="3"></textarea>
+                <div class="reply-editor-toolbar">
+                  <div class="reply-editor-tools">
+                    <button class="reply-editor-tool" title="Attach"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg></button>
+                    <button class="reply-editor-tool" title="Image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></button>
+                    <button class="reply-editor-tool" title="Emoji"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></button>
+                    <button class="reply-editor-tool" title="Link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+                    <button class="reply-editor-tool" title="Template"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></button>
+                    <button class="reply-editor-tool" title="KB"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></button>
+                    <button class="reply-editor-tool" title="Signature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <button class="btn btn-primary">Send Reply <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="6 9 12 15 18 9"/></svg></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Panel -->
+          <div class="detail-panel animate-slide-up" style="animation-delay:100ms;">
+            <!-- Ticket Info -->
+            <div class="detail-panel-section">
+              <div class="detail-panel-title">Ticket Info</div>
+              <div class="detail-panel-row"><span class="detail-panel-label">Status</span><span class="flex items-center gap-1.5"><select class="form-select" style="width:auto;height:30px;font-size:12px;padding:0 28px 0 8px;border-radius:6px;"><option selected>● In Progress</option><option>Open</option><option>Pending</option><option>Resolved</option><option>Closed</option></select></span></div>
+              <div class="detail-panel-row"><span class="detail-panel-label">Priority</span><span class="flex items-center gap-1.5"><select class="form-select" style="width:auto;height:30px;font-size:12px;padding:0 28px 0 8px;border-radius:6px;"><option>High</option><option selected>● Medium</option><option>Low</option><option>Urgent</option></select></span></div>
+              <div class="detail-panel-row"><span class="detail-panel-label">Category</span><span class="detail-panel-value"><select class="form-select" style="width:auto;height:30px;font-size:12px;padding:0 28px 0 8px;border-radius:6px;"><option selected>Software</option><option>IT Hardware</option><option>Network / VPN</option></select></span></div>
+              <div class="detail-panel-row"><span class="detail-panel-label">Subcategory</span><span class="detail-panel-value"><select class="form-select" style="width:auto;height:30px;font-size:12px;padding:0 28px 0 8px;border-radius:6px;"><option selected>Microsoft Outlook</option><option>Office 365</option></select></span></div>
+              <div class="detail-panel-row"><span class="detail-panel-label">Source</span><span class="detail-panel-value">Portal</span></div>
+              <div class="detail-panel-row"><span class="detail-panel-label">SLA Plan</span><div><div class="detail-panel-value text-sm">Standard SLA</div><span class="badge-sla-ok" style="font-size:11px;margin-top:2px;display:inline-block;">Within SLA</span></div></div>
+              <div class="detail-panel-row"><span class="detail-panel-label">Due Date</span><div class="text-right"><div class="detail-panel-value text-sm">May 14, 2025 09:15 AM</div><div class="text-xs flex items-center gap-1 justify-end mt-1" style="color:var(--success-600);"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>1d 21h remaining</div></div></div>
+              <div class="detail-panel-row"><span class="detail-panel-label">Ticket Type</span><span class="detail-panel-value">Incident</span></div>
+            </div>
+
+            <!-- Requester Information -->
+            <div class="detail-panel-section">
+              <div class="detail-panel-title">Requester Information</div>
+              <div class="flex items-center gap-3 mb-4">
+                <div class="avatar avatar-blue">JD</div>
+                <div><div class="font-semibold text-gray-900 text-sm">John Doe</div><div class="text-xs text-gray-500">IT Department</div></div>
+              </div>
+              <div class="space-y-2.5">
+                <div class="flex items-center gap-2 text-sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span class="text-gray-700">john.doe@techcorp.com</span></div>
+                <div class="flex items-center gap-2 text-sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72"/></svg><span class="text-gray-700">+49 123 456 7890</span></div>
+                <div class="flex items-center gap-2 text-sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span class="text-gray-700">Berlin, Germany</span></div>
+              </div>
+            </div>
+
+            <!-- Assigned To -->
+            <div class="detail-panel-section">
+              <div class="detail-panel-title">Assigned To</div>
+              <div class="flex items-center gap-3 mb-3">
+                <img src="https://ui-avatars.com/api/?name=Michael+Smith&background=10B981&color=fff&size=40&rounded=true&bold=true" alt="MS" class="avatar-img">
+                <div><div class="font-semibold text-gray-900 text-sm">Michael Smith</div><div class="text-xs text-gray-500">IT Support Agent</div></div>
+              </div>
+              <button class="btn btn-secondary btn-sm w-full justify-center">Change Assignee</button>
+            </div>
+
+            <!-- Linked Asset -->
+            <div class="detail-panel-section">
+              <div class="detail-panel-title">Linked Asset</div>
+              <div class="flex items-center gap-3 mb-3">
+                <div class="asset-icon" style="width:40px;height:40px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+                <div><div class="font-semibold text-gray-900 text-sm">MacBook Pro 16"</div><div class="text-xs text-gray-500">Serial: CO2F66XYZ123</div></div>
+              </div>
+              <button class="btn btn-secondary btn-sm w-full justify-center">View Asset Details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create New Ticket — TechCorp IT Support Portal</title>
+  <meta name="description" content="Submit a new IT support ticket to the TechCorp IT Support team.">
+  <link rel="stylesheet" href="design-system.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','sans-serif']}}}}</script>
+  <style>body { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="bg-[#F8FAFC]">
+  <div class="layout">
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <div class="sidebar-logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="7.5 4.21 12 6.81 16.5 4.21"/><line x1="12" y1="22.08" x2="12" y2="11.73"/></svg>
+        </div>
+        <div class="sidebar-logo-text">
+          <span class="sidebar-logo-title">TechCorp</span>
+          <span class="sidebar-logo-subtitle">IT Support Portal</span>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="sidebar-group">
+          <a href="employee-dashboard.html" class="sidebar-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            Dashboard
+          </a>
+          <a href="employee-my-tickets.html" class="sidebar-item active">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            My Tickets
+          </a>
+          <a href="employee-assets.html" class="sidebar-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            Assets
+          </a>
+          <a href="employee-knowledgebase.html" class="sidebar-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            Knowledgebase
+          </a>
+          <a href="#" class="sidebar-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            Services
+          </a>
+        </div>
+        <div class="sidebar-group" style="margin-top: auto; padding-top: 24px;">
+          <a href="employee-profile.html" class="sidebar-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            Profile
+          </a>
+          <a href="employee-notifications.html" class="sidebar-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            Notifications
+          </a>
+          <a href="employee-settings.html" class="sidebar-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            Settings
+          </a>
+        </div>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="sidebar-help-card">
+          <div class="sidebar-help-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          </div>
+          <div class="sidebar-help-card-title">Need Help?</div>
+          <div class="sidebar-help-card-text">Our support team is here for you.</div>
+          <a href="#" class="sidebar-help-card-link">Contact IT Support <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="main-content">
+      <header class="topbar">
+        <div class="topbar-left">
+          <div class="topbar-breadcrumb">
+            <a href="employee-dashboard.html">Dashboard</a>
+            <span class="separator">›</span>
+            <a href="employee-my-tickets.html">My Tickets</a>
+            <span class="separator">›</span>
+            <span class="current">Create New Ticket</span>
+          </div>
+        </div>
+        <div class="topbar-center">
+          <div class="topbar-search">
+            <svg class="topbar-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" placeholder="Search tickets, knowledgebase, assets...">
+            <span class="topbar-search-shortcut">⌘ K</span>
+          </div>
+        </div>
+        <div class="topbar-right">
+          <button class="topbar-icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><span class="badge">2</span></button>
+          <div class="topbar-divider"></div>
+          <div class="topbar-profile">
+            <img src="https://ui-avatars.com/api/?name=John+Doe&background=2563EB&color=fff&size=36&rounded=true&bold=true" alt="John Doe" class="topbar-profile-avatar">
+            <div class="topbar-profile-info"><div class="topbar-profile-name">John Doe</div><div class="topbar-profile-role">IT Department</div></div>
+            <svg class="topbar-profile-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </div>
+      </header>
+
+      <div class="content">
+        <!-- Page Header -->
+        <div class="mb-8 animate-slide-up">
+          <h1 class="text-2xl font-bold text-gray-900 mb-1">Create New Ticket</h1>
+          <p class="text-gray-500 text-[15px]">Fill out the form below to submit your request to the IT Support team.</p>
+        </div>
+
+        <div class="grid grid-cols-12 gap-6">
+          <!-- Main Form -->
+          <div class="col-span-8">
+            <div class="card card-no-hover animate-slide-up">
+              <div class="card-body" style="padding: 28px;">
+
+                <!-- Your Information -->
+                <h3 class="text-[15px] font-semibold text-gray-900 mb-4">Your Information</h3>
+                <div class="flex items-center justify-between bg-gray-50 border border-gray-200 rounded-[10px] p-4 mb-8">
+                  <div class="flex items-center gap-3">
+                    <div class="avatar avatar-blue">JD</div>
+                    <div>
+                      <div class="font-semibold text-gray-900">John Doe</div>
+                      <div class="text-sm text-gray-500">IT Department &bull; john.doe@techcorp.com</div>
+                    </div>
+                  </div>
+                  <span class="badge-autofill">Auto-filled</span>
+                </div>
+
+                <!-- Category + Asset Row -->
+                <div class="grid grid-cols-2 gap-5 mb-6">
+                  <div class="form-group" style="margin-bottom:0">
+                    <label class="form-label">Issue Category <span class="required">*</span></label>
+                    <div class="relative">
+                      <select class="form-select" style="padding-left: 40px;">
+                        <option>IT Hardware</option>
+                        <option>Software</option>
+                        <option>Network / VPN</option>
+                        <option>Access / Permissions</option>
+                        <option>Email / Outlook</option>
+                        <option>Security</option>
+                        <option>Other</option>
+                      </select>
+                      <svg style="position:absolute; left:12px; top:50%; transform:translateY(-50%); width:18px; height:18px; color:var(--gray-400);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09"/></svg>
+                    </div>
+                  </div>
+                  <div class="form-group" style="margin-bottom:0">
+                    <label class="form-label">Related Asset <span class="optional">(Optional)</span></label>
+                    <div class="relative">
+                      <select class="form-select" style="padding-left: 40px;">
+                        <option>MacBook Pro 16" – CO2F66XYZ123</option>
+                        <option>Dell 27 Monitor – DELL27-8HJ2JD</option>
+                        <option>Logitech MX Keys – LMXK-7B492H</option>
+                        <option>iPhone 14 Pro – IP14P-9XK7L</option>
+                      </select>
+                      <svg style="position:absolute; left:12px; top:50%; transform:translateY(-50%); width:18px; height:18px; color:var(--gray-400);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Priority Level -->
+                <div class="form-group mb-6">
+                  <label class="form-label">Priority Level <span class="required">*</span></label>
+                  <div class="priority-selector">
+                    <div class="priority-option">
+                      <span class="priority-dot priority-dot-low"></span>
+                      Low
+                      <span class="radio-circle"></span>
+                    </div>
+                    <div class="priority-option">
+                      <span class="priority-dot priority-dot-medium"></span>
+                      Medium
+                      <span class="radio-circle"></span>
+                    </div>
+                    <div class="priority-option selected">
+                      <span class="priority-dot priority-dot-high"></span>
+                      High
+                      <span class="radio-circle"></span>
+                    </div>
+                    <div class="priority-option">
+                      <span class="priority-dot priority-dot-urgent"></span>
+                      Urgent
+                      <span class="radio-circle"></span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Subject -->
+                <div class="form-group mb-6">
+                  <label class="form-label">Subject / Title <span class="required">*</span></label>
+                  <input type="text" class="form-input" value="Laptop Screen Flickering Intermittently" placeholder="Enter a brief summary of your issue">
+                </div>
+
+                <!-- Rich Description -->
+                <div class="form-group mb-6">
+                  <label class="form-label">Detailed Description <span class="required">*</span></label>
+                  <div class="rich-editor">
+                    <div class="rich-editor-toolbar">
+                      <select style="border:none; background:none; font-size:13px; color:var(--gray-600); font-family:Inter; padding:4px 8px; cursor:pointer;">
+                        <option>Paragraph</option>
+                        <option>Heading 1</option>
+                        <option>Heading 2</option>
+                      </select>
+                      <div class="rich-editor-toolbar-divider"></div>
+                      <button class="rich-editor-toolbar-btn" title="Bold"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h8a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z"/><path d="M6 12h9a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z"/></svg></button>
+                      <button class="rich-editor-toolbar-btn" title="Italic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="4" x2="10" y2="4"/><line x1="14" y1="20" x2="5" y2="20"/><line x1="15" y1="4" x2="9" y2="20"/></svg></button>
+                      <button class="rich-editor-toolbar-btn" title="Underline"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v7a6 6 0 0 0 6 6 6 6 0 0 0 6-6V3"/><line x1="4" y1="21" x2="20" y2="21"/></svg></button>
+                      <button class="rich-editor-toolbar-btn" title="Strikethrough"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4H9a3 3 0 0 0-2.83 4"/><path d="M14 12a4 4 0 0 1 0 8H6"/><line x1="4" y1="12" x2="20" y2="12"/></svg></button>
+                      <div class="rich-editor-toolbar-divider"></div>
+                      <button class="rich-editor-toolbar-btn" title="Block Quote"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V21z"/></svg></button>
+                      <button class="rich-editor-toolbar-btn" title="Unordered List"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></button>
+                      <button class="rich-editor-toolbar-btn" title="Ordered List"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="10" y1="6" x2="21" y2="6"/><line x1="10" y1="12" x2="21" y2="12"/><line x1="10" y1="18" x2="21" y2="18"/><path d="M4 6h1v4"/><path d="M4 10h2"/><path d="M6 18H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></button>
+                      <div class="rich-editor-toolbar-divider"></div>
+                      <button class="rich-editor-toolbar-btn" title="Link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+                      <button class="rich-editor-toolbar-btn" title="Image"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></button>
+                      <button class="rich-editor-toolbar-btn" title="Code"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></button>
+                    </div>
+                    <div class="rich-editor-body" contenteditable="true">
+                      <p>Hi Team,</p>
+                      <br>
+                      <p>My laptop screen starts flickering randomly, especially when I am in a video call or working on presentations. It has been happening multiple times a day.</p>
+                      <br>
+                      <p>Please assist.</p>
+                      <br>
+                      <p>Thanks!</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Attachments -->
+                <div class="form-group mb-8">
+                  <label class="form-label">Attachments <span class="optional">(Optional)</span></label>
+                  <div class="file-upload">
+                    <div class="file-upload-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                    </div>
+                    <div class="file-upload-text">Drag & drop files here or <span class="file-upload-link">click to browse</span></div>
+                    <div class="file-upload-hint">Supported formats: PNG, JPG, PDF, DOCX, TXT &nbsp;(Max 10MB per file)</div>
+                  </div>
+                </div>
+
+                <!-- Form Actions -->
+                <div class="flex items-center justify-end gap-3 pt-4 border-t border-gray-100">
+                  <button class="btn btn-secondary btn-lg">Cancel</button>
+                  <button class="btn btn-primary btn-lg">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                    Submit Ticket
+                  </button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Help Panel -->
+          <div class="col-span-4">
+            <!-- Need Help Before Submitting -->
+            <div class="card card-no-hover mb-6 animate-slide-up">
+              <div class="card-body" style="padding: 24px;">
+                <h3 class="text-[15px] font-semibold text-gray-900 mb-1">Need Help Before Submitting?</h3>
+                <p class="text-sm text-gray-500 mb-5">Check our resources or tips below.</p>
+
+                <!-- KB Link -->
+                <a href="employee-knowledgebase.html" class="flex items-center gap-4 p-4 rounded-[10px] border border-gray-200 mb-3 hover:bg-gray-50 hover:border-gray-300 transition-all group">
+                  <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background: var(--success-50);">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                  </div>
+                  <div class="flex-1">
+                    <div class="font-semibold text-gray-900 text-sm">Knowledgebase / FAQ</div>
+                    <div class="text-xs text-gray-500">Find answers to common IT issues.</div>
+                  </div>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400 group-hover:text-blue-600 transition-colors"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+
+                <!-- Common Issues -->
+                <a href="#" class="flex items-center gap-4 p-4 rounded-[10px] border border-gray-200 mb-3 hover:bg-gray-50 hover:border-gray-300 transition-all group">
+                  <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background: var(--warning-50);">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                  </div>
+                  <div class="flex-1">
+                    <div class="font-semibold text-gray-900 text-sm">Common Issues</div>
+                    <div class="text-xs text-gray-500">Browse popular solutions and troubleshooting steps.</div>
+                  </div>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400 group-hover:text-blue-600 transition-colors"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+
+                <!-- Contact Support -->
+                <a href="#" class="flex items-center gap-4 p-4 rounded-[10px] border border-gray-200 hover:bg-gray-50 hover:border-gray-300 transition-all group">
+                  <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background: var(--primary-50);">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                  </div>
+                  <div class="flex-1">
+                    <div class="font-semibold text-gray-900 text-sm">Contact IT Support</div>
+                    <div class="text-xs text-gray-500">Still need help? Our team is here for you.</div>
+                  </div>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400 group-hover:text-blue-600 transition-colors"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Tips -->
+            <div class="card card-no-hover animate-slide-up">
+              <div class="card-body" style="padding: 24px;">
+                <h3 class="text-sm font-semibold mb-4" style="color: var(--primary-600);">Tips for a Faster Resolution</h3>
+                <div class="space-y-3">
+                  <div class="flex items-start gap-3">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    <span class="text-sm text-gray-600">Select the most accurate category.</span>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    <span class="text-sm text-gray-600">Provide a clear and detailed description.</span>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    <span class="text-sm text-gray-600">Attach screenshots or error messages if possible.</span>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    <span class="text-sm text-gray-600">Include the asset related to the issue.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

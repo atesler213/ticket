@@ -1,0 +1,20 @@
+[
+  {
+    "id": "perm-1",
+    "name": "ticket.create",
+    "description": "Can create new tickets",
+    "module": "Tickets"
+  },
+  {
+    "id": "perm-2",
+    "name": "ticket.assign",
+    "description": "Can assign tickets to agents",
+    "module": "Tickets"
+  },
+  {
+    "id": "perm-3",
+    "name": "asset.manage",
+    "description": "Can create and edit assets",
+    "module": "Assets"
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "id": "capa-1",
+    "ticketId": "INC-2026-1044",
+    "rootCauseMethod": "5Whys",
+    "status": "Open",
+    "owner": "Security Engineering",
+    "dueAt": "2026-08-25T00:00:00Z"
+  },
+  {
+    "id": "capa-2",
+    "ticketId": "INC-2026-0988",
+    "rootCauseMethod": "Fishbone",
+    "status": "Delayed",
+    "owner": "Platform Team",
+    "dueAt": "2026-07-29T00:00:00Z"
+  },
+  {
+    "id": "capa-3",
+    "ticketId": "INC-2026-0833",
+    "rootCauseMethod": "5Whys",
+    "status": "Verified",
+    "owner": "SOC",
+    "dueAt": "2026-07-20T00:00:00Z",
+    "verifiedAt": "2026-07-24T15:10:00Z"
+  }
+]

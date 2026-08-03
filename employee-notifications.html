@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notifications — TechCorp IT Support Portal</title>
+  <meta name="description" content="View your notifications and updates.">
+  <link rel="stylesheet" href="design-system.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','sans-serif']}}}}</script>
+  <style>body{font-family:'Inter',sans-serif;}</style>
+</head>
+<body class="bg-[#F8FAFC]">
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-logo"><div class="sidebar-logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="7.5 4.21 12 6.81 16.5 4.21"/><line x1="12" y1="22.08" x2="12" y2="11.73"/></svg></div><div class="sidebar-logo-text"><span class="sidebar-logo-title">TechCorp</span><span class="sidebar-logo-subtitle">IT Support Portal</span></div></div>
+      <nav class="sidebar-nav">
+        <div class="sidebar-group">
+          <a href="employee-dashboard.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Dashboard</a>
+          <a href="employee-my-tickets.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>My Tickets</a>
+          <a href="employee-assets.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>Assets</a>
+          <a href="employee-knowledgebase.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>Knowledgebase</a>
+          <a href="#" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg>Services</a>
+        </div>
+        <div class="sidebar-group" style="margin-top:auto;padding-top:24px;">
+          <a href="employee-profile.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Profile</a>
+          <a href="employee-notifications.html" class="sidebar-item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>Notifications</a>
+          <a href="employee-settings.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg>Settings</a>
+        </div>
+      </nav>
+      <div class="sidebar-footer"><div class="sidebar-help-card"><div class="sidebar-help-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div><div class="sidebar-help-card-title">Need Help?</div><div class="sidebar-help-card-text">Our support team is here for you.</div><a href="#" class="sidebar-help-card-link">Contact IT Support <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="topbar-left"></div>
+        <div class="topbar-center"><div class="topbar-search"><svg class="topbar-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input type="text" placeholder="Search tickets, knowledgebase, assets..."><span class="topbar-search-shortcut">⌘ K</span></div></div>
+        <div class="topbar-right">
+          <button class="topbar-icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><span class="badge">2</span></button>
+          <div class="topbar-divider"></div>
+          <div class="topbar-profile"><img src="https://ui-avatars.com/api/?name=John+Doe&background=2563EB&color=fff&size=36&rounded=true&bold=true" alt="John Doe" class="topbar-profile-avatar"><div class="topbar-profile-info"><div class="topbar-profile-name">John Doe</div><div class="topbar-profile-role">IT Department</div></div><svg class="topbar-profile-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </div>
+      </header>
+
+      <div class="content">
+        <div class="flex items-center justify-between mb-8 animate-slide-up">
+          <div>
+            <h1 class="text-2xl font-bold text-gray-900 mb-1">Notifications</h1>
+            <p class="text-gray-500 text-[15px]">Stay updated on your tickets and announcements.</p>
+          </div>
+          <button class="btn btn-secondary btn-sm">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="20 6 9 17 4 12"/></svg>
+            Mark all as read
+          </button>
+        </div>
+
+        <!-- Tabs -->
+        <div class="card card-no-hover animate-slide-up">
+          <div class="tabs" style="padding: 0 24px;">
+            <button class="tab active">All <span class="tab-count">8</span></button>
+            <button class="tab">Unread <span class="tab-count">2</span></button>
+            <button class="tab">Tickets</button>
+            <button class="tab">System</button>
+          </div>
+
+          <!-- Notification List -->
+          <div>
+            <!-- Unread -->
+            <div class="notification-item unread">
+              <div class="notification-icon" style="background:var(--primary-50);color:var(--primary-600);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              </div>
+              <div class="notification-content">
+                <div class="notification-title">New reply on Ticket #TK-10492</div>
+                <div class="notification-text">Michael Smith replied: "I've escalated this to our Network team as it appears..."</div>
+              </div>
+              <span class="notification-time">10 min ago</span>
+            </div>
+            <div class="notification-item unread">
+              <div class="notification-icon" style="background:var(--success-50);color:var(--success-600);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </div>
+              <div class="notification-content">
+                <div class="notification-title">Ticket #TK-10398 has been resolved</div>
+                <div class="notification-text">Your ticket "Software Installation" has been marked as resolved.</div>
+              </div>
+              <span class="notification-time">2 hours ago</span>
+            </div>
+            <!-- Read -->
+            <div class="notification-item">
+              <div class="notification-icon" style="background:var(--warning-50);color:var(--warning-600);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              </div>
+              <div class="notification-content">
+                <div class="notification-title">VPN Maintenance Scheduled</div>
+                <div class="notification-text">Scheduled VPN maintenance on Sunday, May 18 from 01:00 AM to 03:00 AM.</div>
+              </div>
+              <span class="notification-time">Yesterday</span>
+            </div>
+            <div class="notification-item">
+              <div class="notification-icon" style="background:var(--primary-50);color:var(--primary-600);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              </div>
+              <div class="notification-content">
+                <div class="notification-title">New reply on Ticket #TK-10481</div>
+                <div class="notification-text">Support is looking into your Outlook syncing issue.</div>
+              </div>
+              <span class="notification-time">Yesterday</span>
+            </div>
+            <div class="notification-item">
+              <div class="notification-icon" style="background:var(--gray-100);color:var(--gray-500);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </div>
+              <div class="notification-content">
+                <div class="notification-title">Ticket #TK-10463 assigned to Sarah Lee</div>
+                <div class="notification-text">Your ticket has been assigned to a support agent.</div>
+              </div>
+              <span class="notification-time">2 days ago</span>
+            </div>
+            <div class="notification-item">
+              <div class="notification-icon" style="background:var(--primary-50);color:var(--primary-600);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              </div>
+              <div class="notification-content">
+                <div class="notification-title">New Password Policy Update</div>
+                <div class="notification-text">Our password policy has been updated for better security.</div>
+              </div>
+              <span class="notification-time">4 days ago</span>
+            </div>
+            <div class="notification-item">
+              <div class="notification-icon" style="background:var(--success-50);color:var(--success-600);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </div>
+              <div class="notification-content">
+                <div class="notification-title">Ticket #TK-10370 has been resolved</div>
+                <div class="notification-text">Your ticket "Printer Not Working" has been resolved.</div>
+              </div>
+              <span class="notification-time">5 days ago</span>
+            </div>
+            <div class="notification-item">
+              <div class="notification-icon" style="background:var(--gray-100);color:var(--gray-500);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+              </div>
+              <div class="notification-content">
+                <div class="notification-title">Ticket #TK-10352 has been closed</div>
+                <div class="notification-text">Your ticket "Password Reset Request" is now closed.</div>
+              </div>
+              <span class="notification-time">1 week ago</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

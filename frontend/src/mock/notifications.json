@@ -1,0 +1,13 @@
+[
+  {
+    "id": "notif-1",
+    "userId": "usr-3",
+    "companyId": "comp-1",
+    "type": "TicketUpdate",
+    "title": "Ticket Resolved",
+    "message": "Your ticket 'Monitor flickering' has been resolved by Support Agent.",
+    "link": "/ticket/tkt-3",
+    "isRead": false,
+    "createdAt": "2024-10-11T09:15:00Z"
+  }
+]

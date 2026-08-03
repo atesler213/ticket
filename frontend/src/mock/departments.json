@@ -1,0 +1,34 @@
+[
+  {
+    "id": "dept-1",
+    "companyId": "comp-1",
+    "name": "IT Infrastructure",
+    "description": "Manages servers, networking, and core infrastructure",
+    "managerId": "usr-1",
+    "createdAt": "2024-01-15T08:00:00Z"
+  },
+  {
+    "id": "dept-2",
+    "companyId": "comp-1",
+    "name": "Helpdesk Support",
+    "description": "First line of support for employee issues",
+    "managerId": "usr-2",
+    "createdAt": "2024-01-15T08:00:00Z"
+  },
+  {
+    "id": "dept-3",
+    "companyId": "comp-1",
+    "name": "Human Resources",
+    "description": "HR and Employee relations",
+    "managerId": null,
+    "createdAt": "2024-01-15T08:00:00Z"
+  },
+  {
+    "id": "dept-4",
+    "companyId": "comp-2",
+    "name": "Acme IT",
+    "description": "IT department for Acme",
+    "managerId": "usr-4",
+    "createdAt": "2024-03-10T10:30:00Z"
+  }
+]

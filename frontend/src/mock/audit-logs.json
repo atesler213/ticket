@@ -1,0 +1,35 @@
+[
+  {
+    "id": "aud-1",
+    "actorId": "usr-5",
+    "actorRole": "CISO / ISB",
+    "action": "SENSITIVE_QUEUE_VIEWED",
+    "targetType": "System",
+    "targetId": "queue-sensitive-incidents",
+    "details": "Opened privileged incident queue",
+    "ipAddress": "10.4.12.89",
+    "createdAt": "2026-08-03T08:55:00Z"
+  },
+  {
+    "id": "aud-2",
+    "actorId": "usr-2",
+    "actorRole": "IT Support Agent",
+    "action": "TICKET_STATUS_TRANSITION",
+    "targetType": "Ticket",
+    "targetId": "INC-2026-1044",
+    "details": "Triage -> Assessment",
+    "ipAddress": "10.4.10.21",
+    "createdAt": "2026-08-03T09:11:00Z"
+  },
+  {
+    "id": "aud-3",
+    "actorId": "usr-1",
+    "actorRole": "System Administrator",
+    "action": "PERMISSION_CHANGED",
+    "targetType": "Role",
+    "targetId": "role-2",
+    "details": "Removed ticket.delete permission from Support Agent",
+    "ipAddress": "10.4.10.5",
+    "createdAt": "2026-08-03T10:23:00Z"
+  }
+]

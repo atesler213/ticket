@@ -1,0 +1,134 @@
+openapi: 3.1.0
+info:
+  title: ISO27001 Ticketing and ITAM API
+  version: 1.0.0
+  description: Security-oriented API contract for incident, risk, change, and service workflows.
+servers:
+  - url: /api
+paths:
+  /auth/login:
+    post:
+      summary: Authenticate user and issue session challenge
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [email, password]
+              properties:
+                email: { type: string, format: email }
+                password: { type: string }
+      responses:
+        '200':
+          description: Login accepted
+  /auth/mfa/verify:
+    post:
+      summary: Verify MFA challenge for privileged users
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [challengeId, otpCode]
+              properties:
+                challengeId: { type: string }
+                otpCode: { type: string }
+      responses:
+        '200': { description: MFA verified }
+  /tickets:
+    get:
+      summary: List tickets with RBAC-scoped visibility
+      parameters:
+        - in: query
+          name: ticketType
+          schema: { type: string, enum: [Incident, Risk, Change, ServiceHR] }
+        - in: query
+          name: sensitiveOnly
+          schema: { type: boolean }
+      responses:
+        '200': { description: Ticket collection }
+    post:
+      summary: Create typed ticket
+      responses:
+        '201': { description: Ticket created }
+  /tickets/{id}/transition:
+    post:
+      summary: Transition ticket state using enforced state machine
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [nextStatus]
+              properties:
+                nextStatus:
+                  type: string
+                  enum:
+                    - Logged
+                    - Triage
+                    - Assessment
+                    - Mitigation & Containment
+                    - Evidence Collection
+                    - Pending Verification
+                    - Audit Ready
+                    - False Positive
+                    - Open
+                    - In Progress
+                    - Pending
+                    - Resolved
+                    - Closed
+      responses:
+        '200': { description: Transition applied }
+        '409': { description: Invalid transition or immutable ticket }
+  /tickets/{id}/evidence:
+    post:
+      summary: Register forensic evidence pointer with SHA-256 hash
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: string }
+      responses:
+        '201': { description: Evidence pointer added }
+  /tickets/{id}/capa:
+    post:
+      summary: Create CAPA record and corrective-action sub-ticket
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: string }
+      responses:
+        '201': { description: CAPA created }
+  /audit/logs:
+    get:
+      summary: Retrieve append-only audit logs
+      responses:
+        '200': { description: Audit logs }
+    post:
+      summary: Write security audit event
+      responses:
+        '201': { description: Audit event accepted }
+  /integrations/itam/assets/{assetId}:
+    get:
+      summary: Resolve ITAM asset owner/classification/CIA context
+      parameters:
+        - in: path
+          name: assetId
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { description: Asset context }
+  /integrations/health:
+    get:
+      summary: Integration health status (SSO, ITAM, SIEM, NTP)
+      responses:
+        '200': { description: Integration health overview }

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ticket #TK-10492 — TechCorp IT Support Portal</title>
+  <meta name="description" content="View ticket details and conversation for ticket #TK-10492.">
+  <link rel="stylesheet" href="design-system.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','sans-serif']}}}}</script>
+  <style>body{font-family:'Inter',sans-serif;}</style>
+</head>
+<body class="bg-[#F8FAFC]">
+  <div class="layout">
+    <!-- SIDEBAR (Employee) -->
+    <aside class="sidebar">
+      <div class="sidebar-logo"><div class="sidebar-logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="7.5 4.21 12 6.81 16.5 4.21"/><line x1="12" y1="22.08" x2="12" y2="11.73"/></svg></div><div class="sidebar-logo-text"><span class="sidebar-logo-title">TechCorp</span><span class="sidebar-logo-subtitle">IT Support Portal</span></div></div>
+      <nav class="sidebar-nav">
+        <div class="sidebar-group">
+          <a href="employee-dashboard.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Dashboard</a>
+          <a href="employee-my-tickets.html" class="sidebar-item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>My Tickets</a>
+          <a href="employee-assets.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>Assets</a>
+          <a href="employee-knowledgebase.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>Knowledgebase</a>
+          <a href="#" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4"/></svg>Services</a>
+        </div>
+        <div class="sidebar-group" style="margin-top:auto;padding-top:24px;">
+          <a href="employee-profile.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Profile</a>
+          <a href="employee-notifications.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>Notifications</a>
+          <a href="employee-settings.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4"/></svg>Settings</a>
+        </div>
+      </nav>
+      <div class="sidebar-footer"><div class="sidebar-help-card"><div class="sidebar-help-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div><div class="sidebar-help-card-title">Need Help?</div><div class="sidebar-help-card-text">Our support team is here for you.</div><a href="#" class="sidebar-help-card-link">Contact IT Support <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      <header class="topbar">
+        <div class="topbar-left">
+          <div class="topbar-breadcrumb">
+            <a href="employee-my-tickets.html">My Tickets</a>
+            <span class="separator">›</span>
+            <span class="current">Ticket #TK-10492</span>
+          </div>
+        </div>
+        <div class="topbar-center">
+          <div class="topbar-search"><svg class="topbar-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input type="text" placeholder="Search tickets, knowledgebase, assets..."><span class="topbar-search-shortcut">⌘ K</span></div>
+        </div>
+        <div class="topbar-right">
+          <button class="topbar-icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><span class="badge">2</span></button>
+          <div class="topbar-divider"></div>
+          <div class="topbar-profile"><img src="https://ui-avatars.com/api/?name=John+Doe&background=2563EB&color=fff&size=36&rounded=true&bold=true" alt="John Doe" class="topbar-profile-avatar"><div class="topbar-profile-info"><div class="topbar-profile-name">John Doe</div><div class="topbar-profile-role">IT Department</div></div><svg class="topbar-profile-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </div>
+      </header>
+
+      <div class="content">
+        <div class="flex gap-6">
+          <!-- Left: Ticket Conversation -->
+          <div class="flex-1 min-w-0">
+            <!-- Ticket Header -->
+            <div class="card card-no-hover mb-6 animate-slide-up">
+              <div class="card-body" style="padding: 24px;">
+                <div class="flex items-start justify-between mb-3">
+                  <div>
+                    <div class="flex items-center gap-3 mb-2">
+                      <h1 class="text-xl font-bold text-gray-900">VPN Connection Failed</h1>
+                      <span class="badge badge-inprogress">In Progress</span>
+                    </div>
+                    <div class="flex items-center gap-4 text-sm text-gray-500">
+                      <span class="flex items-center gap-1.5">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        #TK-10492
+                      </span>
+                      <span>•</span>
+                      <span>Created: May 12, 2025 09:30 AM</span>
+                      <span>•</span>
+                      <span>Updated: May 12, 2025 11:15 AM</span>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="priority"><span class="priority-dot priority-dot-high"></span> High</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="card card-no-hover animate-slide-up">
+              <div class="tabs" style="padding: 0 24px;">
+                <button class="tab active">Conversation</button>
+                <button class="tab">Details</button>
+                <button class="tab">Attachments <span class="tab-count">2</span></button>
+                <button class="tab">History</button>
+              </div>
+
+              <!-- Conversation Timeline -->
+              <div class="conversation">
+                <!-- Message 1: User -->
+                <div class="conversation-message">
+                  <div class="conversation-message-header">
+                    <div class="avatar avatar-blue">JD</div>
+                    <div class="conversation-message-name">John Doe</div>
+                    <span class="badge-requester">Requester</span>
+                    <span class="conversation-message-time">May 12, 2025 09:30 AM</span>
+                  </div>
+                  <div class="conversation-message-body">
+                    <p>Hi Team,</p>
+                    <br>
+                    <p>I'm unable to connect to the VPN since this morning. I've tried restarting my laptop and reconnecting multiple times, but it keeps timing out.</p>
+                    <br>
+                    <p>I need VPN access to reach our internal development servers. This is blocking my work.</p>
+                    <br>
+                    <p>Please assist.</p>
+                    <div class="conversation-attachment">
+                      <svg class="conversation-attachment-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                      <span class="conversation-attachment-name">vpn-error-screenshot.png</span>
+                      <span class="conversation-attachment-size">342 KB</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Message 2: Agent -->
+                <div class="conversation-message">
+                  <div class="conversation-message-header">
+                    <div class="avatar avatar-green">MS</div>
+                    <div class="conversation-message-name">Michael Smith</div>
+                    <span class="badge-agent">Agent</span>
+                    <span class="conversation-message-time">May 12, 2025 09:45 AM</span>
+                  </div>
+                  <div class="conversation-message-body">
+                    <p>Hi John,</p>
+                    <br>
+                    <p>Thanks for reaching out. I'm looking into this now.</p>
+                    <br>
+                    <p>Could you please try the following steps:</p>
+                    <ol class="list-decimal ml-5 mt-2 space-y-1">
+                      <li>Open Command Prompt and run: <code class="bg-gray-100 px-1.5 py-0.5 rounded text-sm">ipconfig /flushdns</code></li>
+                      <li>Disconnect and reconnect your WiFi</li>
+                      <li>Try connecting to VPN again</li>
+                    </ol>
+                    <br>
+                    <p>Let me know if this resolves the issue.</p>
+                  </div>
+                </div>
+
+                <!-- Message 3: User -->
+                <div class="conversation-message">
+                  <div class="conversation-message-header">
+                    <div class="avatar avatar-blue">JD</div>
+                    <div class="conversation-message-name">John Doe</div>
+                    <span class="badge-requester">Requester</span>
+                    <span class="conversation-message-time">May 12, 2025 10:15 AM</span>
+                  </div>
+                  <div class="conversation-message-body">
+                    <p>Hi Michael,</p>
+                    <br>
+                    <p>I followed the steps but the issue persists. I'm still getting the same timeout error.</p>
+                    <br>
+                    <p>Here's the latest error screenshot:</p>
+                    <div class="conversation-attachment">
+                      <svg class="conversation-attachment-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                      <span class="conversation-attachment-name">vpn-error-2.png</span>
+                      <span class="conversation-attachment-size">198 KB</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Message 4: Agent -->
+                <div class="conversation-message">
+                  <div class="conversation-message-header">
+                    <div class="avatar avatar-green">MS</div>
+                    <div class="conversation-message-name">Michael Smith</div>
+                    <span class="badge-agent">Agent</span>
+                    <span class="conversation-message-time">May 12, 2025 11:15 AM</span>
+                  </div>
+                  <div class="conversation-message-body">
+                    <p>Thanks for confirming, John.</p>
+                    <br>
+                    <p>I've escalated this to our Network team as it appears there may be a broader issue with the VPN gateway. We're investigating and will update you shortly.</p>
+                    <br>
+                    <p>In the meantime, you can use the backup VPN server by changing the server address to <code class="bg-gray-100 px-1.5 py-0.5 rounded text-sm">vpn2.techcorp.com</code>.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Reply Editor -->
+              <div class="reply-editor">
+                <textarea class="reply-editor-input" placeholder="Type your reply..." rows="3"></textarea>
+                <div class="reply-editor-toolbar">
+                  <div class="reply-editor-tools">
+                    <button class="reply-editor-tool" title="Attach file"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg></button>
+                    <button class="reply-editor-tool" title="Image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></button>
+                    <button class="reply-editor-tool" title="Emoji"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></button>
+                    <button class="reply-editor-tool" title="Bold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h8a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z"/><path d="M6 12h9a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z"/></svg></button>
+                  </div>
+                  <button class="btn btn-primary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                    Send Reply
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Ticket Info Panel -->
+          <div class="detail-panel animate-slide-up" style="animation-delay: 100ms;">
+            <!-- Ticket Info -->
+            <div class="detail-panel-section">
+              <div class="detail-panel-title">Ticket Info</div>
+              <div class="detail-panel-row">
+                <span class="detail-panel-label">Status</span>
+                <span class="badge badge-inprogress" style="font-size:12px;">● In Progress</span>
+              </div>
+              <div class="detail-panel-row">
+                <span class="detail-panel-label">Priority</span>
+                <span class="priority text-sm"><span class="priority-dot priority-dot-high"></span> High</span>
+              </div>
+              <div class="detail-panel-row">
+                <span class="detail-panel-label">Category</span>
+                <span class="detail-panel-value">Network / VPN</span>
+              </div>
+              <div class="detail-panel-row">
+                <span class="detail-panel-label">Source</span>
+                <span class="detail-panel-value">Portal</span>
+              </div>
+              <div class="detail-panel-row">
+                <span class="detail-panel-label">SLA Plan</span>
+                <div>
+                  <div class="detail-panel-value">Standard SLA</div>
+                  <span class="badge-sla-ok" style="font-size:11px; margin-top:2px; display:inline-block;">Within SLA</span>
+                </div>
+              </div>
+              <div class="detail-panel-row">
+                <span class="detail-panel-label">Due Date</span>
+                <div class="text-right">
+                  <div class="detail-panel-value text-sm">May 14, 2025 09:30 AM</div>
+                  <div class="text-xs flex items-center gap-1 justify-end mt-1" style="color: var(--success-600);">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    1d 22h remaining
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Assigned Agent -->
+            <div class="detail-panel-section">
+              <div class="detail-panel-title">Assigned To</div>
+              <div class="flex items-center gap-3">
+                <img src="https://ui-avatars.com/api/?name=Michael+Smith&background=10B981&color=fff&size=40&rounded=true&bold=true" alt="Michael Smith" class="avatar-img">
+                <div>
+                  <div class="font-semibold text-gray-900 text-sm">Michael Smith</div>
+                  <div class="text-xs text-gray-500">IT Support Agent</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Linked Asset -->
+            <div class="detail-panel-section">
+              <div class="detail-panel-title">Linked Asset</div>
+              <div class="flex items-center gap-3 mb-3">
+                <div class="asset-icon" style="width:40px;height:40px;">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                </div>
+                <div>
+                  <div class="font-semibold text-gray-900 text-sm">MacBook Pro 16"</div>
+                  <div class="text-xs text-gray-500">Serial: CO2F66XYZ123</div>
+                </div>
+              </div>
+              <button class="btn btn-secondary btn-sm w-full justify-center">View Asset Details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

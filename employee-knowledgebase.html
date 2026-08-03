@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Knowledgebase — TechCorp IT Support Portal</title>
+  <meta name="description" content="Browse our knowledgebase for answers to common IT issues.">
+  <link rel="stylesheet" href="design-system.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','sans-serif']}}}}</script>
+  <style>body{font-family:'Inter',sans-serif;}</style>
+</head>
+<body class="bg-[#F8FAFC]">
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-logo"><div class="sidebar-logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="7.5 4.21 12 6.81 16.5 4.21"/><line x1="12" y1="22.08" x2="12" y2="11.73"/></svg></div><div class="sidebar-logo-text"><span class="sidebar-logo-title">TechCorp</span><span class="sidebar-logo-subtitle">IT Support Portal</span></div></div>
+      <nav class="sidebar-nav">
+        <div class="sidebar-group">
+          <a href="employee-dashboard.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Dashboard</a>
+          <a href="employee-my-tickets.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>My Tickets</a>
+          <a href="employee-assets.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>Assets</a>
+          <a href="employee-knowledgebase.html" class="sidebar-item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>Knowledgebase</a>
+          <a href="#" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg>Services</a>
+        </div>
+        <div class="sidebar-group" style="margin-top:auto;padding-top:24px;">
+          <a href="employee-profile.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Profile</a>
+          <a href="employee-notifications.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>Notifications</a>
+          <a href="employee-settings.html" class="sidebar-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg>Settings</a>
+        </div>
+      </nav>
+      <div class="sidebar-footer"><div class="sidebar-help-card"><div class="sidebar-help-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div><div class="sidebar-help-card-title">Need Help?</div><div class="sidebar-help-card-text">Our support team is here for you.</div><a href="#" class="sidebar-help-card-link">Contact IT Support <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="topbar-left"></div>
+        <div class="topbar-center"><div class="topbar-search"><svg class="topbar-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input type="text" placeholder="Search tickets, knowledgebase, assets..."><span class="topbar-search-shortcut">⌘ K</span></div></div>
+        <div class="topbar-right">
+          <button class="topbar-icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><span class="badge">2</span></button>
+          <div class="topbar-divider"></div>
+          <div class="topbar-profile"><img src="https://ui-avatars.com/api/?name=John+Doe&background=2563EB&color=fff&size=36&rounded=true&bold=true" alt="John Doe" class="topbar-profile-avatar"><div class="topbar-profile-info"><div class="topbar-profile-name">John Doe</div><div class="topbar-profile-role">IT Department</div></div><svg class="topbar-profile-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </div>
+      </header>
+
+      <div class="content">
+        <!-- Hero Search -->
+        <div class="text-center mb-10 animate-slide-up">
+          <h1 class="text-2xl font-bold text-gray-900 mb-2">Knowledgebase</h1>
+          <p class="text-gray-500 text-[15px] mb-6">Find answers to common IT questions and solutions.</p>
+          <div class="max-w-xl mx-auto relative">
+            <svg style="position:absolute;left:16px;top:50%;transform:translateY(-50%);width:20px;height:20px;color:var(--gray-400);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" class="form-input" style="padding-left:48px;height:48px;font-size:15px;border-radius:12px;" placeholder="Search articles, guides, and tutorials...">
+          </div>
+        </div>
+
+        <!-- Categories Grid -->
+        <div class="mb-10">
+          <h2 class="text-lg font-semibold text-gray-900 mb-5">Browse by Category</h2>
+          <div class="grid grid-cols-4 gap-5 stagger">
+            <div class="kb-category-card animate-slide-up">
+              <div class="kb-category-icon" style="background:var(--primary-50);color:var(--primary-600);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
+              <div class="kb-category-title">Getting Started</div>
+              <div class="kb-category-desc">New to the portal? Learn the basics.</div>
+              <div class="text-xs text-gray-400 mt-3">12 articles</div>
+            </div>
+            <div class="kb-category-card animate-slide-up">
+              <div class="kb-category-icon" style="background:var(--success-50);color:var(--success-600);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+              <div class="kb-category-title">Account & Access</div>
+              <div class="kb-category-desc">Manage your account and access issues.</div>
+              <div class="text-xs text-gray-400 mt-3">18 articles</div>
+            </div>
+            <div class="kb-category-card animate-slide-up">
+              <div class="kb-category-icon" style="background:var(--warning-50);color:var(--warning-600);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg></div>
+              <div class="kb-category-title">Network & VPN</div>
+              <div class="kb-category-desc">Find solutions for network problems.</div>
+              <div class="text-xs text-gray-400 mt-3">15 articles</div>
+            </div>
+            <div class="kb-category-card animate-slide-up">
+              <div class="kb-category-icon" style="background:var(--danger-50);color:var(--danger-600);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+              <div class="kb-category-title">Security</div>
+              <div class="kb-category-desc">Security tips and best practices.</div>
+              <div class="text-xs text-gray-400 mt-3">9 articles</div>
+            </div>
+            <div class="kb-category-card animate-slide-up">
+              <div class="kb-category-icon" style="background:var(--purple-50);color:var(--purple-600);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+              <div class="kb-category-title">Hardware</div>
+              <div class="kb-category-desc">Guides for laptops, monitors, peripherals.</div>
+              <div class="text-xs text-gray-400 mt-3">22 articles</div>
+            </div>
+            <div class="kb-category-card animate-slide-up">
+              <div class="kb-category-icon" style="background:#FFF1F2;color:#E11D48;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+              <div class="kb-category-title">Email & Outlook</div>
+              <div class="kb-category-desc">Email setup, troubleshooting, and tips.</div>
+              <div class="text-xs text-gray-400 mt-3">14 articles</div>
+            </div>
+            <div class="kb-category-card animate-slide-up">
+              <div class="kb-category-icon" style="background:#ECFDF5;color:#059669;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg></div>
+              <div class="kb-category-title">Software</div>
+              <div class="kb-category-desc">Installation guides and software issues.</div>
+              <div class="text-xs text-gray-400 mt-3">20 articles</div>
+            </div>
+            <div class="kb-category-card animate-slide-up">
+              <div class="kb-category-icon" style="background:#FEF3C7;color:#D97706;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+              <div class="kb-category-title">FAQs</div>
+              <div class="kb-category-desc">Frequently asked questions.</div>
+              <div class="text-xs text-gray-400 mt-3">25 articles</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Popular Articles -->
+        <div class="animate-slide-up">
+          <h2 class="text-lg font-semibold text-gray-900 mb-5">Popular Articles</h2>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Article</th>
+                  <th>Category</th>
+                  <th>Updated</th>
+                  <th>Views</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="flex items-center gap-3">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+                      <span class="font-medium text-gray-900">How to Connect to VPN from Home</span>
+                    </div>
+                  </td>
+                  <td>Network & VPN</td>
+                  <td class="text-sm text-gray-500">May 10, 2025</td>
+                  <td class="text-sm text-gray-500">1,234</td>
+                  <td><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-400"><polyline points="9 18 15 12 9 6"/></svg></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="flex items-center gap-3">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+                      <span class="font-medium text-gray-900">Reset Your Password – Step by Step</span>
+                    </div>
+                  </td>
+                  <td>Account & Access</td>
+                  <td class="text-sm text-gray-500">May 08, 2025</td>
+                  <td class="text-sm text-gray-500">987</td>
+                  <td><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-400"><polyline points="9 18 15 12 9 6"/></svg></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="flex items-center gap-3">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+                      <span class="font-medium text-gray-900">Setting Up Outlook on a New Device</span>
+                    </div>
+                  </td>
+                  <td>Email & Outlook</td>
+                  <td class="text-sm text-gray-500">May 05, 2025</td>
+                  <td class="text-sm text-gray-500">856</td>
+                  <td><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-400"><polyline points="9 18 15 12 9 6"/></svg></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="flex items-center gap-3">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+                      <span class="font-medium text-gray-900">How to Request Software Installation</span>
+                    </div>
+                  </td>
+                  <td>Software</td>
+                  <td class="text-sm text-gray-500">May 02, 2025</td>
+                  <td class="text-sm text-gray-500">742</td>
+                  <td><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-400"><polyline points="9 18 15 12 9 6"/></svg></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="flex items-center gap-3">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+                      <span class="font-medium text-gray-900">Connecting External Monitors to MacBook</span>
+                    </div>
+                  </td>
+                  <td>Hardware</td>
+                  <td class="text-sm text-gray-500">Apr 28, 2025</td>
+                  <td class="text-sm text-gray-500">623</td>
+                  <td><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-400"><polyline points="9 18 15 12 9 6"/></svg></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

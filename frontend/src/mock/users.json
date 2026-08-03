@@ -1,0 +1,62 @@
+[
+  {
+    "id": "usr-1",
+    "companyId": "comp-1",
+    "departmentId": "dept-1",
+    "name": "Admin User",
+    "email": "admin@test.com",
+    "role": "System Administrator",
+    "avatar": "https://ui-avatars.com/api/?name=Admin+User&background=2563EB&color=fff",
+    "isActive": true,
+    "createdAt": "2024-01-15T08:00:00Z",
+    "updatedAt": "2024-01-15T08:00:00Z"
+  },
+  {
+    "id": "usr-2",
+    "companyId": "comp-1",
+    "departmentId": "dept-2",
+    "name": "Michael Smith",
+    "email": "agent@test.com",
+    "role": "IT Support Agent",
+    "avatar": "https://ui-avatars.com/api/?name=Michael+Smith&background=10B981&color=fff&size=36&rounded=true&bold=true",
+    "isActive": true,
+    "createdAt": "2024-02-01T09:15:00Z",
+    "updatedAt": "2024-02-01T09:15:00Z"
+  },
+  {
+    "id": "usr-3",
+    "companyId": "comp-1",
+    "departmentId": "dept-3",
+    "name": "Regular Employee",
+    "email": "employee@test.com",
+    "role": "Employee",
+    "avatar": "https://ui-avatars.com/api/?name=Regular+Employee&background=64748B&color=fff",
+    "isActive": true,
+    "createdAt": "2024-03-10T11:20:00Z",
+    "updatedAt": "2024-03-10T11:20:00Z"
+  },
+  {
+    "id": "usr-4",
+    "companyId": "comp-2",
+    "departmentId": "dept-4",
+    "name": "Acme Admin",
+    "email": "admin@acme.co.uk",
+    "role": "Company Administrator",
+    "avatar": "https://ui-avatars.com/api/?name=Acme+Admin&background=7C3AED&color=fff",
+    "isActive": true,
+    "createdAt": "2024-03-10T10:35:00Z",
+    "updatedAt": "2024-03-10T10:35:00Z"
+  },
+  {
+    "id": "usr-5",
+    "companyId": "comp-1",
+    "departmentId": "dept-1",
+    "name": "Isabella Kramer",
+    "email": "isb@company.de",
+    "role": "CISO / ISB",
+    "avatar": "https://ui-avatars.com/api/?name=Isabella+Kramer&background=0F172A&color=fff",
+    "isActive": true,
+    "createdAt": "2024-04-01T08:15:00Z",
+    "updatedAt": "2024-04-01T08:15:00Z"
+  }
+]
