@@ -55,7 +55,20 @@ onBeforeUnmount(() => {
   document.removeEventListener('click', onDocumentClick)
 })
 
-const navigationGroups = computed(() => {
+interface NavItem {
+  name: string
+  icon: string
+  route?: string
+  target?: { name: string; query?: Record<string, string> }
+  badge?: string
+}
+
+interface NavGroup {
+  label: string
+  items: NavItem[]
+}
+
+const navigationGroups = computed<NavGroup[]>(() => {
   const role = user.value?.role
   const path = route.path
 
