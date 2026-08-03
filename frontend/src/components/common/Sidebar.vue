@@ -3,6 +3,7 @@ import { computed, ref, onMounted, onBeforeUnmount } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useAuthStore } from '../../stores/auth'
 import { useTenantStore } from '../../stores/tenant'
+import packageJson from '../../../../package.json'
 
 const route = useRoute()
 const router = useRouter()
@@ -64,7 +65,7 @@ const navigationGroups = computed(() => {
         label: 'OVERVIEW',
         items: [
           { name: 'Dashboard', route: 'admin.dashboard', icon: 'dashboard' },
-          { name: 'Tickets', route: 'admin.tickets', icon: 'tickets', badge: '6' },
+          { name: 'Tickets', route: 'admin.tickets', icon: 'tickets' },
           { name: 'Executive Reports', route: 'admin.reports', icon: 'reports' }
         ]
       },
@@ -111,10 +112,10 @@ const navigationGroups = computed(() => {
         label: 'MAIN',
         items: [
           { name: 'Dashboard', route: 'agent.dashboard', icon: 'dashboard' },
-          { name: 'All Tickets', route: 'agent.tickets', icon: 'tickets', badge: '12' },
-          { name: 'My Queue', route: 'agent.tickets', icon: 'queue', badge: '5' },
-          { name: 'Unassigned', route: 'agent.tickets', icon: 'unassigned', badge: '7' },
-          { name: 'Overdue', route: 'agent.tickets', icon: 'overdue', badge: '3' }
+          { name: 'All Tickets', target: { name: 'agent.tickets', query: { queue: 'all' } }, icon: 'tickets' },
+          { name: 'My Queue', target: { name: 'agent.tickets', query: { queue: 'my' } }, icon: 'queue' },
+          { name: 'Unassigned', target: { name: 'agent.tickets', query: { queue: 'unassigned' } }, icon: 'unassigned' },
+          { name: 'Overdue', target: { name: 'agent.tickets', query: { queue: 'overdue' } }, icon: 'overdue' }
         ]
       },
       {
@@ -162,12 +163,33 @@ const navigationGroups = computed(() => {
   ]
 })
 
-function isActive(routeName: string) {
-  return route.name === routeName
+function isActive(item: any) {
+  if (item.target) {
+    if (route.name !== item.target.name) return false
+    
+    // Check query params
+    if (item.target.query) {
+      for (const key in item.target.query) {
+        if (route.query[key] !== item.target.query[key]) {
+          // Special case: if no queue query param is set, treat 'all' as active
+          if (key === 'queue' && item.target.query[key] === 'all' && !route.query.queue) {
+            continue;
+          }
+          return false;
+        }
+      }
+    }
+    return true
+  }
+  return route.name === item.route
 }
 
-function navigate(routeName: string) {
-  router.push({ name: routeName })
+function navigate(item: any) {
+  if (item.target) {
+    router.push(item.target)
+  } else {
+    router.push({ name: item.route })
+  }
 }
 </script>
 
@@ -195,8 +217,8 @@ function navigate(routeName: string) {
           v-for="item in group.items" 
           :key="item.name"
           href="#"
-          @click.prevent="navigate(item.route)"
-          :class="['sidebar-item', { active: isActive(item.route) }]"
+          @click.prevent="navigate(item)"
+          :class="['sidebar-item', { active: isActive(item) }]"
         >
           <!-- Icons strictly matching HTML SVGs -->
           <svg v-if="item.icon === 'dashboard'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
@@ -277,13 +299,19 @@ function navigate(routeName: string) {
           </button>
         </div>
       </div>
-      <button class="sidebar-collapse-btn" @click="toggleCollapse">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline v-if="!isCollapsed" points="15 18 9 12 15 6"/>
-          <polyline v-else points="9 18 15 12 9 6"/>
-        </svg>
-        <span class="collapse-text">Collapse</span>
-      </button>
+      
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 12px;">
+        <button class="sidebar-collapse-btn" @click="toggleCollapse" style="flex: 1; justify-content: center; margin: 0;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline v-if="!isCollapsed" points="15 18 9 12 15 6"/>
+            <polyline v-else points="9 18 15 12 9 6"/>
+          </svg>
+          <span class="collapse-text">Collapse</span>
+        </button>
+        <div v-if="!isCollapsed" style="font-size: 11px; color: #94A3B8; font-weight: 600; font-family: monospace; padding-right: 4px;">
+          v{{ packageJson.version }}
+        </div>
+      </div>
     </div>
   </aside>
 </template>

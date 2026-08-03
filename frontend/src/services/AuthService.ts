@@ -28,8 +28,10 @@ export const AuthService = {
   },
   
   async validateSession(_token: string): Promise<User> {
-    // Mock validating a JWT by returning a fixed admin user or reading from local storage
     const users = await apiClient.get<User[]>('/users');
-    return users[0];
+    const email = localStorage.getItem('user_email');
+    const user = users.find(u => u.email === email);
+    if (!user) throw new Error('User not found');
+    return user;
   }
 };

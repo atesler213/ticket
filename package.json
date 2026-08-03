@@ -3,17 +3,20 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "postinstall": "prisma generate"
+    "dev": "npx vercel dev",
+    "postinstall": "prisma generate",
+    "seed:assets": "ts-node prisma/seed-assets.ts"
   },
   "dependencies": {
-    "@prisma/client": "^5.10.0"
+    "@prisma/client": "^5.10.0",
+    "dotenv": "^17.4.2"
   },
   "devDependencies": {
-    "prisma": "^5.10.0",
     "@types/node": "^20.0.0",
-    "typescript": "^5.0.0",
+    "@vercel/node": "^3.0.0",
+    "prisma": "^5.10.0",
     "ts-node": "^10.9.2",
-    "@vercel/node": "^3.0.0"
+    "typescript": "^5.0.0"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"

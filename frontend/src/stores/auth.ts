@@ -23,6 +23,7 @@ export const useAuthStore = defineStore('auth', () => {
         token.value = response.token
         isAuthenticated.value = true
         localStorage.setItem('token', response.token)
+        localStorage.setItem('user_email', email)
       }
     } finally {
       isLoading.value = false
@@ -58,6 +59,7 @@ export const useAuthStore = defineStore('auth', () => {
     mfaRequired.value = false
     mfaChallengeId.value = null
     localStorage.removeItem('token')
+    localStorage.removeItem('user_email')
   }
 
   async function checkSession() {
