@@ -34,13 +34,30 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         }
       }
       
+      // Remove non-schema fields that frontend might send
+      delete data.assignedToName;
+      delete data.assignedTo;
+      delete data.company;
+      delete data.tickets;
+      delete data.createdAt;
+      delete data.updatedAt;
+
+      if (!data.assetTag || data.assetTag.trim() === '') {
+        data.assetTag = 'AST-' + Math.floor(100000 + Math.random() * 900000);
+      }
+
       // Fix date fields for Prisma
-      if (data.purchaseDate === '') data.purchaseDate = null;
-      if (data.warrantyExpiry === '') data.warrantyExpiry = null;
-      
-      // Convert to ISO-8601 if valid strings
-      if (data.purchaseDate) data.purchaseDate = new Date(data.purchaseDate).toISOString();
-      if (data.warrantyExpiry) data.warrantyExpiry = new Date(data.warrantyExpiry).toISOString();
+      if (!data.purchaseDate || data.purchaseDate === '') {
+        data.purchaseDate = null;
+      } else {
+        data.purchaseDate = new Date(data.purchaseDate).toISOString();
+      }
+
+      if (!data.warrantyExpiry || data.warrantyExpiry === '') {
+        data.warrantyExpiry = null;
+      } else {
+        data.warrantyExpiry = new Date(data.warrantyExpiry).toISOString();
+      }
 
       
       const asset = await prisma.asset.create({
