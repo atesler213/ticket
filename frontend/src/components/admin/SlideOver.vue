@@ -4,6 +4,7 @@ import { X } from 'lucide-vue-next'
 const props = defineProps<{
   show: boolean
   title: string
+  subtitle?: string
 }>()
 
 const emit = defineEmits<{
@@ -20,24 +21,28 @@ const emit = defineEmits<{
           position: fixed;
           top: 0; right: 0; bottom: 0; left: 0;
           z-index: 9999;
-          background: rgba(15, 23, 42, 0.5);
+          background: rgba(15, 23, 42, 0.6);
           backdrop-filter: blur(4px);
           display: flex;
-          justify-content: flex-end;
+          align-items: center;
+          justify-content: center;
         "
         @click.self="emit('close')"
       >
         <div
           style="
-            width: 480px;
+            width: 560px;
             max-width: 92vw;
-            height: 100%;
+            height: auto;
+            max-height: 90vh;
+            border-radius: 16px;
             background: #ffffff;
-            box-shadow: -8px 0 40px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
             display: flex;
             flex-direction: column;
             position: relative;
-            animation: slideInRight 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+            overflow: hidden;
+            animation: modalPopIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
           "
         >
           <!-- Header -->
@@ -54,7 +59,7 @@ const emit = defineEmits<{
               <h2 style="font-size: 16px; font-weight: 700; color: #0F172A; margin: 0 0 2px 0; line-height: 1.3;">
                 {{ title }}
               </h2>
-              <p style="font-size: 12px; color: #94A3B8; margin: 0;">Manage role permissions and access level</p>
+              <p v-if="subtitle" style="font-size: 12px; color: #94A3B8; margin: 0;">{{ subtitle }}</p>
             </div>
             <button
               type="button"
@@ -78,6 +83,7 @@ const emit = defineEmits<{
 
           <!-- Body -->
           <div style="flex: 1; padding: 24px; overflow-y: auto;">
+            <slot name="content"></slot>
             <slot></slot>
           </div>
 
@@ -103,14 +109,14 @@ const emit = defineEmits<{
 </template>
 
 <style scoped>
-@keyframes slideInRight {
-  from { transform: translateX(100%); opacity: 0; }
-  to   { transform: translateX(0);    opacity: 1; }
+@keyframes modalPopIn {
+  0% { transform: scale(0.92) translateY(12px); opacity: 0; }
+  100% { transform: scale(1) translateY(0); opacity: 1; }
 }
 
 .slideover-enter-active,
 .slideover-leave-active {
-  transition: opacity 0.25s ease;
+  transition: opacity 0.2s ease;
 }
 .slideover-enter-from,
 .slideover-leave-to {

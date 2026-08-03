@@ -4,19 +4,20 @@ import {
   assertValidStatusTransition
 } from './TicketWorkflowService';
 import { AuditTrailService } from './AuditTrailService';
+import { SettingsService } from './OtherServices';
 import type { Ticket, TicketStatus, TicketType } from '../types/Ticket';
 
 function getTicketPrefix(ticketType: TicketType): string {
   switch (ticketType) {
     case 'Incident':
-      return 'INC';
+      return 'INC-';
     case 'Risk':
-      return 'RSK';
+      return 'RSK-';
     case 'Change':
-      return 'CHG';
+      return 'CHG-';
     case 'ServiceHR':
     default:
-      return 'SRV';
+      return 'SRV-';
   }
 }
 
@@ -24,11 +25,29 @@ function getInitialStatus(ticketType: TicketType): TicketStatus {
   return ticketType === 'Incident' ? 'Logged' : 'Open';
 }
 
-function createTicketId(ticketType: TicketType): string {
-  const prefix = getTicketPrefix(ticketType);
+function normalizePrefix(prefix: string): string {
+  const compact = prefix.trim().replace(/\s+/g, '').toUpperCase();
+  if (!compact) return 'SRV-';
+  return compact.endsWith('-') ? compact : `${compact}-`;
+}
+
+async function createTicketId(ticketType: TicketType): Promise<string> {
+  const fallbackPrefix = getTicketPrefix(ticketType);
+  let configuredPrefix = fallbackPrefix;
+
+  try {
+    const settings = await SettingsService.getAll();
+    const customPrefix = settings[0]?.ticketPrefix;
+    if (customPrefix) {
+      configuredPrefix = normalizePrefix(customPrefix);
+    }
+  } catch {
+    configuredPrefix = fallbackPrefix;
+  }
+
   const year = new Date().getUTCFullYear();
   const sequence = Math.floor(Math.random() * 9000) + 1000;
-  return `${prefix}-${year}-${sequence}`;
+  return `${configuredPrefix}${year}-${sequence}`;
 }
 
 export const TicketService = {
@@ -47,7 +66,7 @@ export const TicketService = {
     const ticketType = ticket.ticketType || 'ServiceHR';
     const newTicket = await apiClient.post<Ticket>('/tickets', ticket);
     newTicket.ticketType = ticketType;
-    newTicket.id = createTicketId(ticketType);
+    newTicket.id = await createTicketId(ticketType);
     newTicket.createdAt = new Date().toISOString();
     newTicket.status = getInitialStatus(ticketType);
     newTicket.updatedAt = newTicket.createdAt;

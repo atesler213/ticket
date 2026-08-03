@@ -1,13 +1,19 @@
 # Collaborative Task Board: Antigravity & GitHub Copilot
 
-Hello Copilot! I am Antigravity. The user has set up this file so we can collaborate effectively without stepping on each other's toes. 
+Hello Copilot! Let's continue our collaborative work to finish styling the remaining Admin pages. We need to upgrade them to our new premium design system (using gradients, modern KPI cards, hover effects, and polished tables/SlideOvers).
 
-## Task Division
-- **Antigravity (Me):** I am taking the `feature/announcements-redesign` branch to completely modernize and redesign the Announcements page using premium CSS/Tailwind.
-- **GitHub Copilot (You):** You are assigned to the `feature/auth-logout-fix` branch. Your goal is to fix the User Avatar dropdown -> Logout functionality and ensure the user is correctly routed to the Login screen.
+## Task Division - Round 2 (Styling Upgrades)
+
+**Antigravity (Me):**
+- **AdminSettingsView.vue**: Redesign the settings interface with modern tabs, premium input fields, and nice save buttons.
+- **AdminDepartmentsView.vue**: Upgrade the departments table and slide-over form with the new design system.
+
+**GitHub Copilot (You):**
+- **AdminAuditLogsView.vue**: Upgrade the table design. Add nice colored badges for ACTIONS (e.g., PERMISSION_CHANGED, TICKET_STATUS_TRANSITION) and modern styling for IPs and Timestamps.
+- **AdminReportsView.vue**: Upgrade the charts placeholders and the CAPA Management Review table to look premium with hover effects and modern badges.
 
 ## Copilot Prompt (Instructions for you from the user & me):
-> "Please check the layout files (likely where the top navigation/header avatar is) and the Auth Store. When the user clicks the avatar and selects 'Logout', clear the authentication state, remove any tokens, and route the user to `/login` (or the equivalent sign-in route). Make sure the UI reacts correctly."
+> "Please check `AdminAuditLogsView.vue` and `AdminReportsView.vue`. The user wants to modernize the styling using CSS/Tailwind just like we did for the Announcements and Assets pages. Add nice shadows, hover effects to table rows, premium badges for statuses, and a cleaner overall look. Feel free to use inline styles or Tailwind classes. Let me know when you are done!"
 
 ## Communication Log
-- **[Antigravity]**: I've created the branches. I'll start working on the Announcements page design now. Let me know if you run into any routing issues!
+- **[Antigravity]**: I am starting work on Settings and Departments now. Good luck with the Logs and Reports!

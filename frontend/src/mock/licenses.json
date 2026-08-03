@@ -1,0 +1,89 @@
+[
+  {
+    "id": "lic-001",
+    "softwareName": "Microsoft 365 E5",
+    "vendor": "Microsoft",
+    "type": "Subscription",
+    "status": "Active",
+    "category": "SaaS",
+    "totalSeats": 100,
+    "assignedSeats": 92,
+    "costPerSeat": 35,
+    "monthlyCost": 3500,
+    "expirationDate": "2027-01-15T00:00:00Z",
+    "purchaseDate": "2024-01-15T00:00:00Z",
+    "licenseKey": "M365-XXXX-XXXX-XXXX",
+    "assignedUsers": [
+      { "id": "u1", "name": "Alice Smith", "department": "Engineering" },
+      { "id": "u2", "name": "Bob Jones", "department": "Sales" }
+    ]
+  },
+  {
+    "id": "lic-002",
+    "softwareName": "Adobe Creative Cloud",
+    "vendor": "Adobe",
+    "type": "Per-Seat",
+    "status": "Expiring Soon",
+    "category": "SaaS",
+    "totalSeats": 20,
+    "assignedSeats": 18,
+    "costPerSeat": 80,
+    "monthlyCost": 1600,
+    "expirationDate": "2026-08-15T00:00:00Z",
+    "purchaseDate": "2023-08-15T00:00:00Z",
+    "licenseKey": "ADOBE-XXXX-XXXX-XXXX",
+    "assignedUsers": [
+      { "id": "u3", "name": "Charlie Brown", "department": "Marketing" }
+    ]
+  },
+  {
+    "id": "lic-003",
+    "softwareName": "JetBrains All Products Pack",
+    "vendor": "JetBrains",
+    "type": "Subscription",
+    "status": "Active",
+    "category": "Desktop App",
+    "totalSeats": 50,
+    "assignedSeats": 50,
+    "costPerSeat": 25,
+    "monthlyCost": 1250,
+    "expirationDate": "2026-11-01T00:00:00Z",
+    "purchaseDate": "2024-11-01T00:00:00Z",
+    "licenseKey": "JB-XXXX-XXXX-XXXX",
+    "assignedUsers": [
+      { "id": "u1", "name": "Alice Smith", "department": "Engineering" }
+    ]
+  },
+  {
+    "id": "lic-004",
+    "softwareName": "Figma Professional",
+    "vendor": "Figma",
+    "type": "Per-Seat",
+    "status": "Over-capacity",
+    "category": "SaaS",
+    "totalSeats": 15,
+    "assignedSeats": 18,
+    "costPerSeat": 15,
+    "monthlyCost": 270,
+    "expirationDate": "2027-03-10T00:00:00Z",
+    "purchaseDate": "2024-03-10T00:00:00Z",
+    "licenseKey": "",
+    "assignedUsers": []
+  },
+  {
+    "id": "lic-005",
+    "softwareName": "Windows 11 Enterprise",
+    "vendor": "Microsoft",
+    "type": "Site License",
+    "status": "Active",
+    "category": "OS",
+    "totalSeats": 500,
+    "assignedSeats": 240,
+    "costPerSeat": 10,
+    "monthlyCost": 5000,
+    "expirationDate": "2028-05-01T00:00:00Z",
+    "purchaseDate": "2023-05-01T00:00:00Z",
+    "licenseKey": "WIN11-ENT-XXXX",
+    "assignedUsers": []
+  }
+]

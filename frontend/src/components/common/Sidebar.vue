@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref, onMounted, onBeforeUnmount } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useAuthStore } from '../../stores/auth'
 import { useTenantStore } from '../../stores/tenant'
@@ -11,6 +11,48 @@ const tenantStore = useTenantStore()
 
 const tenantConfig = computed(() => tenantStore.company)
 const user = computed(() => authStore.user)
+
+const isProfileMenuOpen = ref(false)
+const isCollapsed = ref(false)
+
+function toggleProfileMenu() {
+  isProfileMenuOpen.value = !isProfileMenuOpen.value
+}
+
+function closeProfileMenu() {
+  isProfileMenuOpen.value = false
+}
+
+async function handleLogout() {
+  authStore.logout()
+  closeProfileMenu()
+  await router.push({ name: 'login' })
+}
+
+function toggleCollapse() {
+  isCollapsed.value = !isCollapsed.value
+  if (isCollapsed.value) {
+    document.body.classList.add('sidebar-collapsed')
+  } else {
+    document.body.classList.remove('sidebar-collapsed')
+  }
+}
+
+function onDocumentClick(event: MouseEvent) {
+  const target = event.target as HTMLElement | null
+  if (!target?.closest('.sidebar-user-wrapper')) {
+    closeProfileMenu()
+  }
+}
+
+onMounted(() => {
+  document.addEventListener('click', onDocumentClick)
+  // Check initial state if it was collapsed previously, omitted for simplicity
+})
+
+onBeforeUnmount(() => {
+  document.removeEventListener('click', onDocumentClick)
+})
 
 const navigationGroups = computed(() => {
   const role = user.value?.role
@@ -45,6 +87,7 @@ const navigationGroups = computed(() => {
       {
         label: 'CONFIGURATION',
         items: [
+          { name: 'Licenses', route: 'admin.licenses', icon: 'licenses' },
           { name: 'Integrations', route: 'admin.integrations', icon: 'integrations' },
           { name: 'Audit Logs', route: 'admin.audit', icon: 'audit' },
           { name: 'Announcements', route: 'admin.announcements', icon: 'announcements' },
@@ -170,6 +213,7 @@ function navigate(routeName: string) {
           <svg v-else-if="item.icon === 'roles'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           <svg v-else-if="item.icon === 'categories'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
           <svg v-else-if="item.icon === 'slas'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <svg v-else-if="item.icon === 'licenses'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
           <svg v-else-if="item.icon === 'integrations'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
           <svg v-else-if="item.icon === 'audit'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
           <svg v-else-if="item.icon === 'announcements'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
@@ -182,19 +226,111 @@ function navigate(routeName: string) {
     </nav>
     
     <div class="sidebar-footer">
-      <div class="sidebar-user">
-        <img :src="user?.avatar || 'https://ui-avatars.com/api/?name=Michael+Smith&background=10B981&color=fff&size=36&rounded=true&bold=true'" alt="Avatar" class="sidebar-user-avatar">
-        <div class="sidebar-user-info">
-          <div class="sidebar-user-name">{{ user?.name || 'Michael Smith' }}</div>
-          <div class="sidebar-user-role">{{ user?.role || 'IT Support Agent' }}</div>
-          <div class="sidebar-user-status">Online</div>
+      <div class="sidebar-user-wrapper" style="position: relative;">
+        <button class="sidebar-user" type="button" @click="toggleProfileMenu" style="width: 100%; border: none; background: transparent; text-align: left; cursor: pointer; padding: 0;">
+          <img :src="user?.avatar || 'https://ui-avatars.com/api/?name=Michael+Smith&background=10B981&color=fff&size=36&rounded=true&bold=true'" alt="Avatar" class="sidebar-user-avatar">
+          <div class="sidebar-user-info">
+            <div class="sidebar-user-name">{{ user?.name || 'Michael Smith' }}</div>
+            <div class="sidebar-user-role">{{ user?.role || 'IT Support Agent' }}</div>
+            <div class="sidebar-user-status">Online</div>
+          </div>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+
+        <div
+          v-if="isProfileMenuOpen"
+          style="
+            position: absolute;
+            bottom: calc(100% + 8px);
+            left: 0;
+            width: 220px;
+            background: #fff;
+            border: 1px solid #E2E8F0;
+            border-radius: 10px;
+            box-shadow: 0 -4px 20px rgba(15, 23, 42, 0.12);
+            z-index: 100;
+            overflow: hidden;
+          "
+        >
+          <div style="padding: 12px 14px; border-bottom: 1px solid #F1F5F9;">
+            <div style="font-size: 13px; font-weight: 700; color: #0F172A;">{{ user?.name || 'User' }}</div>
+            <div style="font-size: 12px; color: #64748B; margin-top: 2px;">{{ user?.email || '' }}</div>
+          </div>
+          <button
+            type="button"
+            @click="handleLogout"
+            style="
+              width: 100%;
+              text-align: left;
+              padding: 10px 14px;
+              font-size: 13px;
+              font-weight: 600;
+              color: #B91C1C;
+              background: #fff;
+              border: none;
+              cursor: pointer;
+            "
+            @mouseover="($event.currentTarget as HTMLElement).style.background = '#FEF2F2'"
+            @mouseleave="($event.currentTarget as HTMLElement).style.background = '#fff'"
+          >
+            Logout
+          </button>
         </div>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
       </div>
-      <button class="sidebar-collapse-btn">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
-        Collapse
+      <button class="sidebar-collapse-btn" @click="toggleCollapse">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline v-if="!isCollapsed" points="15 18 9 12 15 6"/>
+          <polyline v-else points="9 18 15 12 9 6"/>
+        </svg>
+        <span class="collapse-text">Collapse</span>
       </button>
     </div>
   </aside>
 </template>
+
+<style>
+/* Unscoped global CSS overrides for sidebar collapsed state */
+body.sidebar-collapsed {
+  --sidebar-width: var(--sidebar-collapsed-width, 72px);
+}
+
+body.sidebar-collapsed .sidebar-logo-text,
+body.sidebar-collapsed .sidebar-group-label,
+body.sidebar-collapsed .sidebar-item-badge,
+body.sidebar-collapsed .sidebar-user-info,
+body.sidebar-collapsed .collapse-text {
+  display: none !important;
+}
+
+body.sidebar-collapsed .sidebar-item {
+  justify-content: center;
+  padding: 0;
+  width: 44px;
+  height: 44px;
+  margin: 0 auto 4px auto;
+  font-size: 0; /* Hide text content inside anchor */
+}
+
+body.sidebar-collapsed .sidebar-item svg {
+  margin-right: 0;
+}
+
+body.sidebar-collapsed .sidebar-user {
+  justify-content: center;
+}
+
+body.sidebar-collapsed .sidebar-user > svg {
+  display: none;
+}
+
+body.sidebar-collapsed .sidebar-collapse-btn {
+  justify-content: center;
+  padding: 0;
+  width: 44px;
+  height: 44px;
+  margin: 0 auto;
+}
+body.sidebar-collapsed .sidebar-collapse-btn svg {
+  margin-right: 0;
+}
+</style>

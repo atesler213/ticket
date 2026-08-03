@@ -151,6 +151,12 @@ const router = createRouter({
           meta: { roles: ['Admin'] }
         },
         {
+          path: 'admin/licenses',
+          name: 'admin.licenses',
+          component: () => import('../views/admin/AdminLicensesView.vue'),
+          meta: { roles: ['Admin'] }
+        },
+        {
           path: 'admin/audit-logs',
           name: 'admin.audit',
           component: () => import('../views/admin/AdminAuditLogsView.vue'),

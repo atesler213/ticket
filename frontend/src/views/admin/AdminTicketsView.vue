@@ -126,6 +126,63 @@ function tabCount(tab: string) {
   if (tab === 'resolved') return all.filter(t => t.status === 'Resolved' || t.status === 'Closed').length
   return 0
 }
+// ── Pagination ───────────────────────────────────────────────────
+const currentPage = ref(1)
+const itemsPerPage = 10
+
+const paginatedTickets = computed(() => {
+  const start = (currentPage.value - 1) * itemsPerPage
+  const end = start + itemsPerPage
+  return filteredTickets.value.slice(start, end)
+})
+
+const totalPages = computed(() => Math.ceil(filteredTickets.value.length / itemsPerPage))
+
+function nextPage() {
+  if (currentPage.value < totalPages.value) currentPage.value++
+}
+
+function prevPage() {
+  if (currentPage.value > 1) currentPage.value--
+}
+
+function goToPage(page: number) {
+  currentPage.value = page
+}
+
+// Reset page when filters change
+import { watch } from 'vue'
+watch([searchQuery, filterStatus, filterPriority, filterAssignee, activeTab], () => {
+  currentPage.value = 1
+})
+
+// ── Export ───────────────────────────────────────────────────────
+function exportToCSV() {
+  const headers = ['Ticket ID', 'Title', 'Requester', 'Assignee', 'Status', 'Priority', 'Category', 'Created At']
+  
+  const rows = filteredTickets.value.map(t => [
+    t.id,
+    `"${(t.title || '').replace(/"/g, '""')}"`,
+    `"${((t as any).requesterName || t.requesterId || '').replace(/"/g, '""')}"`,
+    `"${((t as any).assigneeName || 'Unassigned').replace(/"/g, '""')}"`,
+    t.status,
+    t.priority,
+    (t as any).category || '',
+    new Date(t.createdAt).toISOString()
+  ])
+  
+  const csvContent = [headers.join(','), ...rows.map(r => r.join(','))].join('\n')
+  
+  const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' })
+  const url = URL.createObjectURL(blob)
+  const link = document.createElement('a')
+  link.setAttribute('href', url)
+  link.setAttribute('download', `tickets_export_${new Date().toISOString().split('T')[0]}.csv`)
+  document.body.appendChild(link)
+  link.click()
+  document.body.removeChild(link)
+}
+
 // ── Assignment SlideOver ─────────────────────────────────────────
 const showAssign = ref(false)
 const assigningTicket = ref<Ticket | null>(null)
@@ -255,6 +312,7 @@ async function handleAssign() {
             style="display:inline-flex;align-items:center;gap:6px;padding:8px 14px;font-size:13px;font-weight:600;color:#475569;background:#fff;border:1.5px solid #E2E8F0;border-radius:8px;cursor:pointer;transition:all 0.15s;"
             @mouseover="($event.currentTarget as HTMLElement).style.background='#F8FAFC'"
             @mouseleave="($event.currentTarget as HTMLElement).style.background='#fff'"
+            @click="exportToCSV"
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             Export
@@ -294,12 +352,12 @@ async function handleAssign() {
       <!-- ── Ticket Rows ─────────────────────────────────────────── -->
       <div
         v-else
-        v-for="(ticket, idx) in filteredTickets"
+        v-for="(ticket, idx) in paginatedTickets"
         :key="ticket.id"
         :style="`
           display:grid;grid-template-columns:120px 1fr 160px 160px 100px 90px 110px 40px;
           padding:14px 20px;align-items:center;cursor:pointer;
-          border-bottom:${idx < filteredTickets.length - 1 ? '1px solid #F8FAFC' : 'none'};
+          border-bottom:${idx < paginatedTickets.length - 1 ? '1px solid #F8FAFC' : 'none'};
           transition:background 0.15s;
         `"
         @click="goToTicket(ticket.id)"
@@ -386,13 +444,38 @@ async function handleAssign() {
 
       <!-- ── Table Footer ──────────────────────────────────────── -->
       <div style="padding:12px 20px;background:#F8FAFC;border-top:1px solid #E2E8F0;display:flex;align-items:center;justify-content:space-between;font-size:12px;color:#64748B;">
-        <span>Showing <strong>{{ filteredTickets.length }}</strong> of <strong>{{ ticketStore.tickets.length }}</strong> tickets</span>
-        <div style="display:flex;gap:4px;">
-          <button style="width:28px;height:28px;border-radius:6px;border:1px solid #E2E8F0;background:#fff;color:#64748B;cursor:pointer;display:flex;align-items:center;justify-content:center;" disabled>
+        <span>Showing <strong>{{ Math.min((currentPage - 1) * itemsPerPage + 1, filteredTickets.length) }}</strong> to <strong>{{ Math.min(currentPage * itemsPerPage, filteredTickets.length) }}</strong> of <strong>{{ filteredTickets.length }}</strong> tickets</span>
+        <div v-if="totalPages > 1" style="display:flex;gap:4px;">
+          <button 
+            style="width:28px;height:28px;border-radius:6px;border:1px solid #E2E8F0;background:#fff;color:#64748B;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.15s;"
+            :disabled="currentPage === 1"
+            :style="currentPage === 1 ? 'opacity:0.5;cursor:not-allowed;' : 'cursor:pointer;'"
+            @click="prevPage"
+            @mouseover="currentPage !== 1 && (($event.currentTarget as HTMLElement).style.background='#F1F5F9')"
+            @mouseleave="currentPage !== 1 && (($event.currentTarget as HTMLElement).style.background='#fff')"
+          >
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
           </button>
-          <button style="width:28px;height:28px;border-radius:6px;border:none;background:#6366F1;color:#fff;cursor:pointer;font-size:12px;font-weight:700;">1</button>
-          <button style="width:28px;height:28px;border-radius:6px;border:1px solid #E2E8F0;background:#fff;color:#64748B;cursor:pointer;display:flex;align-items:center;justify-content:center;">
+          
+          <button 
+            v-for="page in totalPages" 
+            :key="page"
+            :style="`width:28px;height:28px;border-radius:6px;border:none;cursor:pointer;font-size:12px;font-weight:700;transition:all 0.15s; ${page === currentPage ? 'background:#6366F1;color:#fff;' : 'background:transparent;color:#64748B;'}`"
+            @click="goToPage(page)"
+            @mouseover="page !== currentPage && (($event.currentTarget as HTMLElement).style.background='#F1F5F9')"
+            @mouseleave="page !== currentPage && (($event.currentTarget as HTMLElement).style.background='transparent')"
+          >
+            {{ page }}
+          </button>
+          
+          <button 
+            style="width:28px;height:28px;border-radius:6px;border:1px solid #E2E8F0;background:#fff;color:#64748B;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.15s;"
+            :disabled="currentPage === totalPages"
+            :style="currentPage === totalPages ? 'opacity:0.5;cursor:not-allowed;' : 'cursor:pointer;'"
+            @click="nextPage"
+            @mouseover="currentPage !== totalPages && (($event.currentTarget as HTMLElement).style.background='#F1F5F9')"
+            @mouseleave="currentPage !== totalPages && (($event.currentTarget as HTMLElement).style.background='#fff')"
+          >
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
           </button>
         </div>
@@ -400,13 +483,15 @@ async function handleAssign() {
     </div>
 
     <!-- Assign SlideOver -->
-    <SlideOver :show="showAssign" title="Assign Ticket" @close="showAssign = false">
+    <SlideOver :show="showAssign" title="Assign Ticket" subtitle="Select an agent to handle this ticket." @close="showAssign = false">
       <template #content>
-        <div class="space-y-4">
-          <p class="text-sm text-gray-600">Assigning ticket: <strong>#{{ assigningTicket?.id }}</strong></p>
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div style="background: #F8FAFC; padding: 12px 16px; border-radius: 8px; border: 1px solid #E2E8F0;">
+            <p style="font-size: 13px; color: #475569; margin: 0;">Assigning ticket: <strong style="color: #0F172A;">#{{ assigningTicket?.id }}</strong></p>
+          </div>
           <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1">Select Agent</label>
-            <select v-model="selectedAssigneeId" class="form-select w-full">
+            <label style="display: block; font-size: 12px; font-weight: 600; color: #64748B; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px;">Select Agent</label>
+            <select v-model="selectedAssigneeId" style="width: 100%; padding: 10px 14px; font-size: 14px; color: #0F172A; background: #fff; border: 1.5px solid #E2E8F0; border-radius: 8px; outline: none; transition: all 0.15s; box-sizing: border-box; cursor: pointer;" @focus="onFocus" @blur="onBlur">
               <option value="">-- Unassigned --</option>
               <option v-for="agent in userStore.users.filter(u => u.role.includes('Agent') || u.role.includes('Admin'))" :key="agent.id" :value="agent.id">
                 {{ agent.name }} ({{ agent.role }})
@@ -416,8 +501,8 @@ async function handleAssign() {
         </div>
       </template>
       <template #footer>
-        <button class="btn btn-secondary" @click="showAssign = false">Cancel</button>
-        <button class="btn btn-primary" @click="handleAssign">Confirm Assignment</button>
+        <button type="button" style="padding: 9px 20px; font-size: 13px; font-weight: 600; color: #475569; background: #fff; border: 1.5px solid #E2E8F0; border-radius: 8px; cursor: pointer; transition: all 0.15s;" @mouseover="($event.currentTarget as HTMLElement).style.background = '#F8FAFC'" @mouseleave="($event.currentTarget as HTMLElement).style.background = '#fff'" @click="showAssign = false">Cancel</button>
+        <button type="button" style="padding: 9px 20px; font-size: 13px; font-weight: 600; color: #fff; background: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%); border: none; border-radius: 8px; cursor: pointer; box-shadow: 0 2px 8px rgba(99,102,241,0.35); transition: all 0.15s;" @mouseover="($event.currentTarget as HTMLElement).style.boxShadow = '0 4px 16px rgba(99,102,241,0.45)'; ($event.currentTarget as HTMLElement).style.transform = 'translateY(-1px)'" @mouseleave="($event.currentTarget as HTMLElement).style.boxShadow = '0 2px 8px rgba(99,102,241,0.35)'; ($event.currentTarget as HTMLElement).style.transform = 'translateY(0)'" @click="handleAssign">Confirm Assignment</button>
       </template>
     </SlideOver>
   </div>
